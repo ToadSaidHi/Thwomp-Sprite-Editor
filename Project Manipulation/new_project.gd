@@ -26,6 +26,7 @@ func _on_newer_grabber_request_completed(result: int, response_code: int, header
 		file.store_buffer(body)
 		file.close()
 		var reader := ZIPReader.new()
+		
 		var e := reader.open(Globals.currentProject.Path + "/temp.zip")
 		for path in reader.get_files():
 			pass
@@ -38,7 +39,7 @@ func _on_newer_grabber_request_completed(result: int, response_code: int, header
 				var out := FileAccess.open(newOut, FileAccess.WRITE)
 				out.store_buffer(data)
 				out.close()
-			reader.close()
+		reader.close()
 		da.remove_absolute(Globals.currentProject.Path + "/temp.zip")
 		da.rename_absolute(Globals.currentProject.Path + "/NewerSMBW-cw", Globals.currentProject.Path + "/files")
 		patchMoreSprites()
@@ -52,8 +53,12 @@ func patchMoreSprites():
 	else:
 		#Globals.addToEndOfFile(Globals.getKamekFolder() + "./kamek_pal.x", "	originalSprites = 0x8030a340;\n	originalProfiles = 0x8076a748;\n	ObjectProfileList = 0x8042a698;\n	spriteFiles = 0x8031ab4c;\n	profileNames = 0x80320b58;\n	searchByProfileId__7fBase_cFUsP7fBase_c = 0x80162E90;\n	create__13dStageActor_cFUsUiP7Point3dP6S16VecUc = 0x80064610;\n	createChild__13dStageActor_cFUsP13dStageActor_cUiP7Point3dP6S16VecUc = 0x80064680;")
 		var f = FileAccess.open(Globals.getIncludeFolder() + "/game.h", FileAccess.WRITE)
-		f.store_string(FileAccess.open("res://Objects/Patched game.h File.txt", FileAccess.WRITE).get_as_text())
+		f.store_string(FileAccess.open("res://Objects/Patched game.h File.txt", FileAccess.READ).get_as_text())
 		f.close()
+		f = FileAccess.open(Globals.getToolsFolder() + "/kamek.py", FileAccess.WRITE)
+		f.store_string(FileAccess.open("res://Objects/Patched Kamek.py.txt", FileAccess.READ).get_as_text())
+		f.close()
+		Globals.addToEndOfFile(Globals.getKamekFolder() + "/NewerProject.yaml", "  - processed/profile.yaml")
 		
 	pass
 	

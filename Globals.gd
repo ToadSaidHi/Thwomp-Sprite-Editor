@@ -10,9 +10,12 @@ func getSRCFolder() -> String:
 
 func getIncludeFolder() -> String:
 	return currentProject.Path + "/files/Kamek/include"
+
+func getToolsFolder() -> String:
+	return currentProject.Path + "/files/Kamek/tools"
 	
 func addToEndOfFile(filePath : String, text : String):
-	var file = FileAccess.open(filePath, FileAccess.READ)
+	var file = FileAccess.open(filePath, FileAccess.READ_WRITE)
 	var content = file.get_as_text()
 	content = content + "\n" + text
 	file.store_string(content)
