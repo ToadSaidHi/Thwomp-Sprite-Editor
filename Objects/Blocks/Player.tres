@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="BlockType" format=3 uid="uid://epvr5cscqr3h"]
-
-[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/blockType.gd" id="1_n8pj2"]
-
-[resource]
-script = ExtResource("1_n8pj2")
-catagoryName = "Player"
-catagoryColor = Color(0.67058825, 0.39607844, 0.5058824, 1)
-metadata/_custom_type_script = "uid://b30t1q3f3e4cu"

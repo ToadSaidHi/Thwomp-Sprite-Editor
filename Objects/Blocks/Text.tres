@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="BlockType" format=3 uid="uid://x8h57mullpp6"]
-
-[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/blockType.gd" id="1_ut30q"]
-
-[resource]
-script = ExtResource("1_ut30q")
-catagoryName = "Text"
-catagoryColor = Color(0.64705884, 0.7176471, 0.8862745, 1)
-metadata/_custom_type_script = "uid://b30t1q3f3e4cu"
