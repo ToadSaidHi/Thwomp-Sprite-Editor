@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://caye1sh6xyylk"]
+
+[ext_resource type="Script" uid="uid://bhn6qf6utql4w" path="res://Project Manipulation/new_project.gd" id="1_54d73"]
+[ext_resource type="Script" uid="uid://cgp72n37r7ag7" path="res://Project Manipulation/newer_grabber.gd" id="1_ek5ml"]
+[ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="3_b8hhj"]
+
+[node name="NewProject" type="Node2D" unique_id=2116340979]
+script = ExtResource("1_54d73")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=889741457]
+
+[node name="NewerGrabber" type="HTTPRequest" parent="." unique_id=22747940]
+script = ExtResource("1_ek5ml")
+
+[node name="NewName" type="TextEdit" parent="." unique_id=749197305]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -50.0
+offset_right = 500.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_b8hhj")
+placeholder_text = "Name your project..."
+
+[node name="Okay Button" type="Button" parent="NewName" unique_id=473569063]
+layout_mode = 0
+offset_top = 153.0
+offset_right = 201.0
+offset_bottom = 246.0
+text = "Okay"
+
+[node name="MoreSpritesGrabber" type="HTTPRequest" parent="." unique_id=977474705]
+
+[connection signal="request_completed" from="NewerGrabber" to="." method="_on_newer_grabber_request_completed"]
+[connection signal="button_up" from="NewName/Okay Button" to="." method="_on_okay_button_button_up"]
+[connection signal="request_completed" from="MoreSpritesGrabber" to="." method="_on_more_sprites_grabber_request_completed"]

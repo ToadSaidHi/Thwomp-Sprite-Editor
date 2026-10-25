@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cplk57enbq5ui"]
+
+[ext_resource type="FontFile" uid="uid://y0ll3dp7hb1n" path="res://Assets/Bromine.ttf" id="1_a7jwj"]
+
+[resource]
+default_font = ExtResource("1_a7jwj")
+default_font_size = 85

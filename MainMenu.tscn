@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dpxtfxs7jfvre"]
+
+[node name="MainMenu" type="Node2D" unique_id=708923123]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1706227575]
+
+[node name="New Project" type="Button" parent="." unique_id=1411149363]
+offset_left = -124.0
+offset_top = 75.0
+offset_right = 124.0
+offset_bottom = 140.0
+text = "New Project"
+
+[node name="Load Project" type="Button" parent="." unique_id=901689145]
+offset_left = -124.0
+offset_top = 163.0
+offset_right = 124.0
+offset_bottom = 228.0
+text = "Load Project"

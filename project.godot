@@ -14,10 +14,22 @@ config/name="NSMBW Sprite Edit"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://brhbeucd0unfl"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Objects/": "teal",
+"res://Project Manipulation/": "yellow"
+}
 
 [physics]
 
@@ -26,3 +38,4 @@ window/stretch/aspect="expand"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.20784314, 0.2, 0.21568628, 1)
