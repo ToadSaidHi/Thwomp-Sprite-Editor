@@ -1,0 +1,2 @@
+# nsmbw-sprite-edit
+
