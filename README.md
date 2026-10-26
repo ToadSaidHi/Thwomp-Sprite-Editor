@@ -19,4 +19,4 @@ Thwomp Sprite Editor also includes some pre-patched code.
 Base code is written by the Newer Team, released under GNU General Public License v3. 
 [Newer Super Mario Bros Wii](https://github.com/Newer-Team/NewerSMBW)
 The Patched code is written by AboodXD, CLF78, Nin0, Synel, and Ryguy, under a MIT License. 
-[More Sprites]([https://github.com/Newer-Team/NewerSMBW](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/tree/main?tab=readme-ov-file))
+[More Sprites](https://github.com/Developers-Collective/NSMBW-Custom-Sprites/tree/main?tab=readme-ov-file)
