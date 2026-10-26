@@ -1,3 +1,3 @@
-# nsmbw-sprite-edit
+# Thwomp Sprite Editor
 
-Name tbd :sob:
+...yeah
