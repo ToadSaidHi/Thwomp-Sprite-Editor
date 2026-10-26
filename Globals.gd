@@ -2,6 +2,10 @@ extends Node
 
 var currentProject : Project
 
+var allSprites : Array[CustomSprite]
+
+
+
 func getKamekFolder() -> String:
 	return currentProject.Path + "/files/Kamek"
 

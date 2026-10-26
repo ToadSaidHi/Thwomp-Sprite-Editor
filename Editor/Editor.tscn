@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bg5oy80kopa2g"]
+
+[ext_resource type="Script" uid="uid://ddewx2bkyj58r" path="res://Editor/editor.gd" id="1_rh0xm"]
+[ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Sprite.gd" id="2_ue5br"]
+[ext_resource type="Resource" uid="uid://b1w8crfn6aa4" path="res://Objects/Sprites/TestSprite.tres" id="3_uuq6v"]
+[ext_resource type="PackedScene" uid="uid://bse0p2swux856" path="res://Editor/SpriteTile.tscn" id="4_uuq6v"]
+
+[sub_resource type="Resource" id="Resource_rh0xm"]
+script = ExtResource("2_ue5br")
+Name = "Captain Toad"
+Order = 1
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_mauyw"]
+script = ExtResource("2_ue5br")
+Name = "Evil Chef"
+Order = 2
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_uuq6v"]
+script = ExtResource("2_ue5br")
+Name = "That 1 Sprite"
+Order = 3
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_q4kyq"]
+script = ExtResource("2_ue5br")
+Name = "Black Hole"
+Order = 4
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_lsqqn"]
+script = ExtResource("2_ue5br")
+Name = "Cat Suit"
+Order = 5
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_8ntjk"]
+script = ExtResource("2_ue5br")
+Name = "Cappy Controller"
+Order = 6
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_mpd7s"]
+script = ExtResource("2_ue5br")
+Name = "Minigame Loader"
+Order = 7
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_ef05v"]
+script = ExtResource("2_ue5br")
+Name = "Puppet Master"
+Order = 8
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_fk0vg"]
+script = ExtResource("2_ue5br")
+Name = "Talking Flower"
+Order = 9
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[sub_resource type="Resource" id="Resource_8oxxl"]
+script = ExtResource("2_ue5br")
+Name = "Good Chef"
+Order = 10
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
+
+[node name="Editor" type="Node2D" unique_id=1944090959]
+script = ExtResource("1_rh0xm")
+testSpriteArray = Array[ExtResource("2_ue5br")]([ExtResource("3_uuq6v"), SubResource("Resource_rh0xm"), SubResource("Resource_mauyw"), SubResource("Resource_uuq6v"), SubResource("Resource_q4kyq"), SubResource("Resource_lsqqn"), SubResource("Resource_8ntjk"), SubResource("Resource_mpd7s"), SubResource("Resource_ef05v"), SubResource("Resource_fk0vg"), SubResource("Resource_8oxxl")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1063770791]
+offset_left = -586.0
+offset_top = -271.0
+offset_right = -546.0
+offset_bottom = -231.0
+scale = Vector2(6.400001, 15.52)
+color = Color(0.94509804, 0.8745098, 0.75686276, 1)
+
+[node name="SpriteTiles" type="Node2D" parent="." unique_id=908172470]
+position = Vector2(-300, -266)
+
+[node name="SpriteTile" parent="SpriteTiles" unique_id=1911849603 instance=ExtResource("4_uuq6v")]
+visible = false
+
+[node name="Toolbar" type="ColorRect" parent="." unique_id=2096452552]
+offset_left = -577.0
+offset_top = -351.0
+offset_right = -537.0
+offset_bottom = -311.0
+scale = Vector2(29.04, 1.4799988)
+color = Color(0.90588236, 0.827451, 0.53333336, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1928046784]

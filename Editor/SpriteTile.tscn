@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bse0p2swux856"]
+
+[ext_resource type="Script" uid="uid://cv7235f8so238" path="res://Editor/sprite_tile.gd" id="1_hh412"]
+[ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="2_swvny"]
+
+[node name="SpriteTile" type="Node2D" unique_id=1911849603]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_hh412")
+
+[node name="Button" type="Button" parent="." unique_id=691674526]
+offset_right = 750.0
+offset_bottom = 75.0
+theme = ExtResource("2_swvny")
+theme_override_font_sizes/font_size = 65
+text = "Sprite Name"
