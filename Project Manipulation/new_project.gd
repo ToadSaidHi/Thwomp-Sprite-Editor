@@ -12,7 +12,9 @@ func _on_okay_button_button_up() -> void:
 	Globals.currentProject = Project.new()
 	Globals.currentProject.Name = $NewName.text
 	Globals.currentProject.Path = ("user://" + $NewName.text)
+	
 	$NewName.hide();
+	$Progress.text = "Downloading Newer Source"
 	print("Download started")
 	downNewer();
 
@@ -20,6 +22,7 @@ func _on_okay_button_button_up() -> void:
 func _on_newer_grabber_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	print("Download Finished")
 	if response_code == 200:
+		$Progress.text = "Opening Newer Project"
 		var da = DirAccess
 		da.make_dir_recursive_absolute(Globals.currentProject.Path )
 		var file := FileAccess.open(Globals.currentProject.Path + "/temp.zip", FileAccess.WRITE)
@@ -42,6 +45,7 @@ func _on_newer_grabber_request_completed(result: int, response_code: int, header
 		reader.close()
 		da.remove_absolute(Globals.currentProject.Path + "/temp.zip")
 		da.rename_absolute(Globals.currentProject.Path + "/NewerSMBW-cw", Globals.currentProject.Path + "/files")
+		$Progress.text = "Patching with More Sprites Mod"
 		patchMoreSprites()
 		
 	else:
@@ -80,6 +84,8 @@ func patchMoreSprites():
 		Globals.addToEndOfFile(Globals.getKamekFolder() + "/NewerProject.yaml", "  - Filler.yaml")
 		
 		Globals.addToEndOfFile(Globals.getIncludeFolder() + "/asm_profiles.S", "#define Filler PROFILEID_ADJUST_C+PROFILEID_ADJUST_KW+750")
+		
+		$Progress.text = "Done!"
 		
 	pass
 	
