@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	Globals.allSprites = testSpriteArray
 	loadSpriteTiles()
+	Build.Build()
 
 
 func _process(delta: float) -> void:
