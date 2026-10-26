@@ -7,15 +7,23 @@ var allSprites : Array[CustomSprite]
 
 
 func getKamekFolder() -> String:
+	if(currentProject == null):
+		return "user://mainTest/files/Kamek"
 	return currentProject.Path + "/files/Kamek"
 
 func getSRCFolder() -> String:
+	if(currentProject == null):
+		return "user://mainTest/files/Kamek/src"
 	return currentProject.Path + "/files/Kamek/src"
 
 func getIncludeFolder() -> String:
+	if(currentProject == null):
+		return  "user://mainTest/files/Kamek/include"
 	return currentProject.Path + "/files/Kamek/include"
 
 func getToolsFolder() -> String:
+	if(currentProject == null):
+		return "user://mainTest/files/Kamek/tools"
 	return currentProject.Path + "/files/Kamek/tools"
 	
 func addToEndOfFile(filePath : String, text : String):

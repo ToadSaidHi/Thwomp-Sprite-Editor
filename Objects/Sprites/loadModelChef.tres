@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="loadModel" format=3 uid="uid://bwech5guqujpj"]
+
+[ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/loadModel.gd" id="1_sfcpi"]
+[ext_resource type="Resource" uid="uid://dj3vgt4d3nc6f" path="res://Objects/Sprites/ChefSpriteArcData.tres" id="2_i4j4x"]
+
+[resource]
+script = ExtResource("1_sfcpi")
+sp = ExtResource("2_i4j4x")
+metadata/_custom_type_script = "uid://e7i0e2petq55"

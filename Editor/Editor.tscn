@@ -2,66 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ddewx2bkyj58r" path="res://Editor/editor.gd" id="1_rh0xm"]
 [ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Sprite.gd" id="2_ue5br"]
-[ext_resource type="Resource" uid="uid://b1w8crfn6aa4" path="res://Objects/Sprites/TestSprite.tres" id="3_uuq6v"]
 [ext_resource type="Script" uid="uid://dr8osbp47ncfq" path="res://Objects/Funct.gd" id="4_q4kyq"]
 [ext_resource type="PackedScene" uid="uid://bse0p2swux856" path="res://Editor/SpriteTile.tscn" id="4_uuq6v"]
 [ext_resource type="Script" uid="uid://cfddph5fg4o1l" path="res://Objects/State.gd" id="5_8ntjk"]
 [ext_resource type="Script" uid="uid://0lt8g8m4rrxc" path="res://Objects/variable.gd" id="5_lsqqn"]
+[ext_resource type="Resource" uid="uid://dj3vgt4d3nc6f" path="res://Objects/Sprites/ChefSpriteArcData.tres" id="7_ef05v"]
 [ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/block.gd" id="7_mpd7s"]
-
-[sub_resource type="Resource" id="Resource_rh0xm"]
-script = ExtResource("2_ue5br")
-Name = "Captain Toad"
-Order = 1
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_mauyw"]
-script = ExtResource("2_ue5br")
-Name = "Evil Chef"
-Order = 2
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_uuq6v"]
-script = ExtResource("2_ue5br")
-Name = "That 1 Sprite"
-Order = 3
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_q4kyq"]
-script = ExtResource("2_ue5br")
-Name = "Black Hole"
-Order = 4
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_lsqqn"]
-script = ExtResource("2_ue5br")
-Name = "Cat Suit"
-Order = 5
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_8ntjk"]
-script = ExtResource("2_ue5br")
-Name = "Cappy Controller"
-Order = 6
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_mpd7s"]
-script = ExtResource("2_ue5br")
-Name = "Minigame Loader"
-Order = 7
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_ef05v"]
-script = ExtResource("2_ue5br")
-Name = "Puppet Master"
-Order = 8
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
-
-[sub_resource type="Resource" id="Resource_fk0vg"]
-script = ExtResource("2_ue5br")
-Name = "Talking Flower"
-Order = 9
-metadata/_custom_type_script = "uid://r5du4vthdi1o"
+[ext_resource type="Resource" uid="uid://bwech5guqujpj" path="res://Objects/Sprites/loadModelChef.tres" id="8_fk0vg"]
 
 [sub_resource type="Resource" id="Resource_0tek8"]
 script = ExtResource("5_lsqqn")
@@ -107,18 +54,26 @@ value = "true"
 Name = "GlobalVarTwo"
 metadata/_custom_type_script = "uid://0lt8g8m4rrxc"
 
+[sub_resource type="Resource" id="Resource_fk0vg"]
+script = ExtResource("4_q4kyq")
+Name = "onCreate"
+lines = Array[ExtResource("7_mpd7s")]([ExtResource("8_fk0vg")])
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
 [sub_resource type="Resource" id="Resource_8oxxl"]
 script = ExtResource("2_ue5br")
 Name = "Good_Chef"
-Order = 10
 Functs = Array[ExtResource("4_q4kyq")]([SubResource("Resource_bidrp")])
 globalVars = Array[ExtResource("5_lsqqn")]([SubResource("Resource_3oj1v"), SubResource("Resource_ka1pi")])
+arcData = ExtResource("7_ef05v")
 States = Array[ExtResource("5_8ntjk")]([SubResource("Resource_veos7"), SubResource("Resource_j21il")])
+onCreate = SubResource("Resource_fk0vg")
 metadata/_custom_type_script = "uid://r5du4vthdi1o"
 
 [node name="Editor" type="Node2D" unique_id=1944090959]
 script = ExtResource("1_rh0xm")
-testSpriteArray = Array[ExtResource("2_ue5br")]([ExtResource("3_uuq6v"), SubResource("Resource_rh0xm"), SubResource("Resource_mauyw"), SubResource("Resource_uuq6v"), SubResource("Resource_q4kyq"), SubResource("Resource_lsqqn"), SubResource("Resource_8ntjk"), SubResource("Resource_mpd7s"), SubResource("Resource_ef05v"), SubResource("Resource_fk0vg"), SubResource("Resource_8oxxl")])
+testSpriteArray = Array[ExtResource("2_ue5br")]([SubResource("Resource_8oxxl")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1063770791]
 offset_left = -586.0

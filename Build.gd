@@ -25,14 +25,59 @@ func Build() -> String:
 		for s in sp.States:
 			cpp += "\tDECLARE_STATE(" + s.Name + ");\n"
 		cpp += "};\n\n"
+		for s in sp.States:
+			cpp += "CREATE_STATE(" + sp.Name + ", " + s.Name + ");\n"
+		cpp += "\n"
+		for f in sp.Functs:
+			cpp += buildFunction(sp, f)
+		cpp += buildFunction(sp, sp.onCreate)
+		
 		print(cpp)
+		saveToFile(sp, cpp)
 	
 	return ""
-	
-	
-	
 
 
+
+func buildFunction(s : CustomSprite, f : CustomFunction) -> String:
+	var out = ""
+	var tabCount = 1;
+	var argList = ""
+	var x = 1;
+	var allArgs = f.Arguments.size()
+	for a in f.Arguments:
+		argList += a.type + " " + a.Name
+		if(x != allArgs):
+			argList += ", "
+		x+=1
+	out +=  f.returnType + " " + s.Name + "::" + f.Name + "(" + argList + "){\n"
+	for b in f.lines:
+		var y = 0
+		while y < tabCount:
+			y+= 1
+			out += "\t"
+		
+		out += b.convertToCode() + "\n"
+	out += "}\n\n"
+	
+	return out;
+
+
+func saveToFile(sp : CustomSprite, cpp : String) -> void:
+	var f = FileAccess.open(Globals.getSRCFolder() + "/" + sp.Name + ".cpp", FileAccess.WRITE)
+	f.store_string(cpp)
+	f.close()
+	
+	var yaml = "hooks: []\nsource_files:\n- ../src/" + sp.Name + ".cpp"
+	
+	
+	f = FileAccess.open(Globals.getKamekFolder() + "/" + sp.Name + ".yaml", FileAccess.WRITE)
+	f.store_string(yaml)
+	f.close()
+	
+	#DON'T FORGET TO ADD TO NEWER PROJECT YAML OR SPRITE LIST
+	
+	pass
 
 
 

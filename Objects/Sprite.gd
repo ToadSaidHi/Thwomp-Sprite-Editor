@@ -6,9 +6,11 @@ class_name CustomSprite extends Resource
 @export var Functs : Array[CustomFunction]
 @export var globalVars : Array[CustomVar]
 
-@export var arcFile : String
-@export var brres : String
-@export var mdl : String
-@export var startAnimation : String
+@export var arcData : CustomSpriteArcData
 
 @export var States :Array[customState]
+
+@export var onCreate : CustomFunction
+@export var onDraw : CustomFunction
+@export var onExecute : CustomFunction
+@export var onDelete : CustomFunction

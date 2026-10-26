@@ -4,3 +4,8 @@ class_name Block extends Resource
 @export var Description : String;
 @export var Type : BlockType;
 @export var codeInsert : String;
+
+@export var id : int
+
+func convertToCode() -> String:
+	return codeInsert
