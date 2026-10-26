@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CustomSprite" format=3 uid="uid://b1w8crfn6aa4"]
 
-[ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Sprite.gd" id="1_01ly1"]
+[ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Classes/Sprite.gd" id="1_01ly1"]
 
 [resource]
 script = ExtResource("1_01ly1")

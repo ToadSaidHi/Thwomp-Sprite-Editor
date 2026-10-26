@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CustomSpriteArcData" format=3 uid="uid://dj3vgt4d3nc6f"]
 
-[ext_resource type="Script" uid="uid://bruaurg26ga0b" path="res://Objects/spriteArcData.gd" id="1_oxx7s"]
+[ext_resource type="Script" uid="uid://bruaurg26ga0b" path="res://Objects/Classes/spriteArcData.gd" id="1_oxx7s"]
 
 [resource]
 script = ExtResource("1_oxx7s")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Block" format=3 uid="uid://dh5a8alaamfif"]
 
-[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/block.gd" id="1_dedit"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="1_dedit"]
 [ext_resource type="Resource" uid="uid://dp77mtw8byt4w" path="res://Objects/Block Types/Other.tres" id="1_np3vn"]
 
 [resource]
