@@ -58,6 +58,9 @@ func patchMoreSprites():
 		f = FileAccess.open(Globals.getToolsFolder() + "/kamek.py", FileAccess.WRITE)
 		f.store_string(FileAccess.open("res://Objects/Patched Kamek.py.txt", FileAccess.READ).get_as_text())
 		f.close()
+		f = FileAccess.open(Globals.getKamekFolder() + "./kamek_pal.x", FileAccess.WRITE)
+		f.store_string(FileAccess.open("res://Objects/Patched KamekPal.txt", FileAccess.READ).get_as_text())
+		f.close()
 		Globals.addToEndOfFile(Globals.getKamekFolder() + "/NewerProject.yaml", "  - processed/profile.yaml")
 		
 	pass
