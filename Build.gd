@@ -34,7 +34,7 @@ func Build() -> String:
 		
 		print(cpp)
 		saveToFile(sp, cpp)
-	
+	updateLists()
 	return ""
 
 
@@ -74,11 +74,44 @@ func saveToFile(sp : CustomSprite, cpp : String) -> void:
 	f = FileAccess.open(Globals.getKamekFolder() + "/" + sp.Name + ".yaml", FileAccess.WRITE)
 	f.store_string(yaml)
 	f.close()
-	
-	#DON'T FORGET TO ADD TO NEWER PROJECT YAML OR SPRITE LIST
-	
+	yamlCollection.append(sp.Name + ".yaml")
+	profileCollection.insert(sp.Order, sp.Name)
 	pass
 
+func updateLists():
+	var f = FileAccess.open(Globals.getKamekFolder() + "/NewerProject.yaml", FileAccess.WRITE)
+	var out = FileAccess.open("res://Objects/baseNewerProjext.txt", FileAccess.READ).get_as_text()
+	for yaml in yamlCollection:
+		out += "\n  - " + yaml
+	f.store_string(out)
+	f.close()
+	f = FileAccess.open(Globals.getIncludeFolder() + "/asm_profiles.S", FileAccess.WRITE)
+	out = FileAccess.open("res://Objects/Patched AsmProfiles.S.txt", FileAccess.READ).get_as_text()
+	var x = 751
+	for pc in profileCollection:
+		out += "\n#define " + pc + " PROFILEID_ADJUST_C+PROFILEID_ADJUST_KW+" + str(x)
+		x+= 1
+	f.store_string(out)
+	f.close
+	x = 484
+	f = FileAccess.open(Globals.getIncludeFolder() + "/profileid.h", FileAccess.WRITE)
+	out = FileAccess.open("res://Objects/Patched ProfileID.txt", FileAccess.READ).get_as_text()
+	var normID = ""
+	for pc in profileCollection:
+		normID += "\n\t" + pc + " = " + str(x) + ","
+		x+=1
+	var Asm = ""
+	x = 751
+	for pc in profileCollection:
+		Asm += "\n\t" + pc  + ","
+	f.store_string(out.replace("	//DO NOT REMOVE THIS LINE EITHER", Asm).replace("	//DO NOT REMOVE THIS LINE IF YOU WANT YOUR CODE TO BE UPDATED", normID))
+	f.close()
+	
+	##define Filler PROFILEID_ADJUST_C+PROFILEID_ADJUST_KW+750
+	
+	
 
 
+var profileCollection : Array[String]
+var yamlCollection : Array[String]
 var headers : String = "#include <common.h>\n#include <game.h>\n#include <g3dhax.h>\n#include <sfx.h>\n#include <stage.h>\n#include \"boss.h\""
