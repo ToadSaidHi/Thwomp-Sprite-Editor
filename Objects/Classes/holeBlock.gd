@@ -1,12 +1,12 @@
 class_name HoleBlock extends Block
 
-@export var subBlocks : Array[subBlock]
+@export var SubBlocks : Array[subBlock]
 
 func convertToCode() -> String:
 	var l = codeInsert
-	l.replace("%0%", subBlocks.get(0))
-	l.replace("%1%", subBlocks.get(1))
-	l.replace("%2%", subBlocks.get(2))
-	l.replace("%3%", subBlocks.get(3))
-	l.replace("%4%", subBlocks.get(4))
+	l.replace("%0%", SubBlocks.get(0))
+	l.replace("%1%", SubBlocks.get(1))
+	l.replace("%2%", SubBlocks.get(2))
+	l.replace("%3%", SubBlocks.get(3))
+	l.replace("%4%", SubBlocks.get(4))
 	return ""

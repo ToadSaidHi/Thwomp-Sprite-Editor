@@ -1,4 +1,4 @@
-class_name loadModel extends Block
+class_name loadModel extends HoleBlock
 
 @export var sp : CustomSpriteArcData
 

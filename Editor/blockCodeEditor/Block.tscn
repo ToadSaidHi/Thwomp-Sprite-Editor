@@ -2,7 +2,14 @@
 
 [ext_resource type="Script" uid="uid://eklv6me23v6l" path="res://Editor/blockCodeEditor/block.gd" id="1_sal11"]
 [ext_resource type="Resource" uid="uid://b08j40nmiooc8" path="res://Objects/Blocks/Basic/loadModelAndAnime.tres" id="2_xhmhm"]
+[ext_resource type="Script" uid="uid://bx3web8d3xgfd" path="res://Editor/blockCodeEditor/HoleArea.gd" id="3_tug77"]
 [ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="3_xhmhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc2ms"]
+size = Vector2(81, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0vrb"]
+size = Vector2(303, 149)
 
 [node name="Block" type="Node2D" unique_id=650439733]
 script = ExtResource("1_sal11")
@@ -33,11 +40,19 @@ offset_right = 220.0
 offset_bottom = 150.0
 
 [node name="Hole1" type="ColorRect" parent="." unique_id=1664895739]
-visible = false
 offset_top = 10.0
 offset_right = 80.0
 offset_bottom = 140.0
 color = Color(0.20784314, 0.2, 0.21568628, 1)
+
+[node name="Area2D" type="Area2D" parent="Hole1" unique_id=64114913]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_tug77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole1/Area2D" unique_id=508280507]
+position = Vector2(39.5, 65)
+shape = SubResource("RectangleShape2D_lc2ms")
 
 [node name="Hole2" type="ColorRect" parent="." unique_id=393556413]
 visible = false
@@ -46,6 +61,15 @@ offset_right = 80.0
 offset_bottom = 140.0
 color = Color(0.20784314, 0.2, 0.21568628, 1)
 
+[node name="Area2D" type="Area2D" parent="Hole2" unique_id=1632491608]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_tug77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole2/Area2D" unique_id=1724873841]
+position = Vector2(39.5, 65)
+shape = SubResource("RectangleShape2D_lc2ms")
+
 [node name="Hole3" type="ColorRect" parent="." unique_id=414438623]
 visible = false
 offset_top = 10.0
@@ -53,12 +77,30 @@ offset_right = 80.0
 offset_bottom = 140.0
 color = Color(0.20784314, 0.2, 0.21568628, 1)
 
+[node name="Area2D" type="Area2D" parent="Hole3" unique_id=2056864807]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_tug77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole3/Area2D" unique_id=721508624]
+position = Vector2(39.5, 65)
+shape = SubResource("RectangleShape2D_lc2ms")
+
 [node name="Hole4" type="ColorRect" parent="." unique_id=1402587966]
 visible = false
 offset_top = 10.0
 offset_right = 80.0
 offset_bottom = 140.0
 color = Color(0.20784314, 0.2, 0.21568628, 1)
+
+[node name="Area2D" type="Area2D" parent="Hole4" unique_id=1971174986]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("3_tug77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole4/Area2D" unique_id=1077071111]
+position = Vector2(39.5, 65)
+shape = SubResource("RectangleShape2D_lc2ms")
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=1553448087]
 offset_left = 100.0
@@ -75,3 +117,10 @@ vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1946524169]
 position = Vector2(505, 13)
+
+[node name="ClickableArea" type="Area2D" parent="." unique_id=1962585501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea" unique_id=1451384216]
+position = Vector2(151.5, 75.5)
+shape = SubResource("RectangleShape2D_u0vrb")
+debug_color = Color(0.8055084, 0.39396393, 0.36927304, 0.41960785)
