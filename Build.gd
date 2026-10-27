@@ -3,6 +3,7 @@ extends Node
 func Build() -> String:
 	
 	for sp in Globals.allSprites:
+		Globals.currentBuildingSprite = sp
 		var cpp = headers + "\n\n";
 		cpp += "const char* ModelLoaderConst [] = { \"<ARCNAME>\", NULL };\n\n".replace("<ARCNAME>", sp.arcData.arcFile)
 		cpp += "class " + sp.Name + " : public dEn_c {\npublic:\n\n"

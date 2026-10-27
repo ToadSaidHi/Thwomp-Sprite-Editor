@@ -2,10 +2,17 @@
 
 [ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/Classes/loadModel.gd" id="1_aqpwg"]
 [ext_resource type="Resource" uid="uid://b25nixh28b3vn" path="res://Objects/Block Types/AnimationAndModel.tres" id="1_tyi6b"]
+[ext_resource type="Script" uid="uid://gyotv2locax4" path="res://Objects/Classes/StringSub.gd" id="2_xj6s5"]
+
+[sub_resource type="Resource" id="Resource_xj6s5"]
+script = ExtResource("2_xj6s5")
+content = "idle"
+metadata/_custom_type_script = "uid://gyotv2locax4"
 
 [resource]
 script = ExtResource("1_aqpwg")
 withAnime = true
+animeName = SubResource("Resource_xj6s5")
 Title = "Load Model and Animation [StringSub]"
 Description = "Load a model with a starting animation (Required for any animations in the future)"
 Type = ExtResource("1_tyi6b")

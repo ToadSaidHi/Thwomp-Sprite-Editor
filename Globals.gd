@@ -5,6 +5,9 @@ var currentProject : Project
 var allSprites : Array[CustomSprite]
 
 
+#Only to be used during Build()
+var currentBuildingSprite : CustomSprite
+
 
 func getKamekFolder() -> String:
 	if(currentProject == null):

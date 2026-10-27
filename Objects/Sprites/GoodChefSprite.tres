@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="3_bx0au"]
 [ext_resource type="Script" uid="uid://cfddph5fg4o1l" path="res://Objects/Classes/State.gd" id="4_cnryu"]
 [ext_resource type="Resource" uid="uid://dj3vgt4d3nc6f" path="res://Objects/Sprites/ChefSpriteArcData.tres" id="5_8sqcx"]
-[ext_resource type="Resource" uid="uid://bwech5guqujpj" path="res://Objects/Sprites/loadModelChef.tres" id="6_fbu66"]
+[ext_resource type="Resource" uid="uid://b08j40nmiooc8" path="res://Objects/Blocks/Basic/loadModelAndAnime.tres" id="6_cmw8s"]
 [ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Classes/Sprite.gd" id="7_jajom"]
 
 [sub_resource type="Resource" id="Resource_cmw8s"]
@@ -97,7 +97,7 @@ metadata/_custom_type_script = "uid://0lt8g8m4rrxc"
 [sub_resource type="Resource" id="Resource_fk0vg"]
 script = ExtResource("1_cmw8s")
 Name = "onCreate"
-lines = Array[ExtResource("3_bx0au")]([ExtResource("6_fbu66")])
+lines = Array[ExtResource("3_bx0au")]([ExtResource("6_cmw8s")])
 returnType = "int"
 metadata/_custom_type_script = "uid://dr8osbp47ncfq"
 
