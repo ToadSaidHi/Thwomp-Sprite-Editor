@@ -2,7 +2,12 @@ extends Node2D
 @export var block : Block
 @export var subBlocks : Array[subBlock]
 
+var dragging: bool = false
+var mouseOff: Vector2 = Vector2.ZERO
+
 func _ready() -> void:
+	
+	
 	$Title.text = block.Title
 	for i in block.SubBlockInputs:
 		subBlocks.append(null)
@@ -20,7 +25,12 @@ func setColor():
 
 
 func _process(delta: float) -> void:
-	
+	if(Input.is_action_just_pressed("clickDown") and mouseInBox):
+		dragging = true
+	elif(Input.is_action_just_released("clickDown")):
+		dragging = false
+	if(dragging):
+		global_position = get_global_mouse_position() + mouseOff
 	growBlock()
 
 func insertSubBlock(loc : int, block : subBlock):
@@ -70,4 +80,19 @@ func growBlock():
 			$Hole4.modulate = block.SubBlockInputs.get(x).color
 			$Hole4.show()
 		x+=1
+	$Draggable.size.x = e.size.x+120
 	
+	
+
+			
+
+var mouseInBox = false
+
+
+func _on_draggable_button_down() -> void:
+	mouseOff = global_position - get_global_mouse_position()
+	dragging = true
+
+
+func _on_draggable_button_up() -> void:
+	dragging = false

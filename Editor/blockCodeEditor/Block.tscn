@@ -1,19 +1,16 @@
 [gd_scene format=3 uid="uid://2m7tn7y8s3ux"]
 
 [ext_resource type="Script" uid="uid://eklv6me23v6l" path="res://Editor/blockCodeEditor/block.gd" id="1_sal11"]
-[ext_resource type="Resource" uid="uid://b08j40nmiooc8" path="res://Objects/Blocks/Basic/loadModelAndAnime.tres" id="2_xhmhm"]
+[ext_resource type="Resource" uid="uid://sobfqdki4x1h" path="res://Objects/Blocks/Basic/loadModel.tres" id="2_wmdd0"]
 [ext_resource type="Script" uid="uid://bx3web8d3xgfd" path="res://Editor/blockCodeEditor/HoleArea.gd" id="3_tug77"]
 [ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="3_xhmhm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc2ms"]
 size = Vector2(81, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0vrb"]
-size = Vector2(303, 149)
-
 [node name="Block" type="Node2D" unique_id=650439733]
 script = ExtResource("1_sal11")
-block = ExtResource("2_xhmhm")
+block = ExtResource("2_wmdd0")
 
 [node name="Base" type="ColorRect" parent="." unique_id=166731568]
 offset_right = 120.0
@@ -115,12 +112,11 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1946524169]
-position = Vector2(505, 13)
+[node name="Draggable" type="Button" parent="." unique_id=218102467]
+offset_left = 4.0
+offset_right = 12.0
+offset_bottom = 150.0
+flat = true
 
-[node name="ClickableArea" type="Area2D" parent="." unique_id=1962585501]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableArea" unique_id=1451384216]
-position = Vector2(151.5, 75.5)
-shape = SubResource("RectangleShape2D_u0vrb")
-debug_color = Color(0.8055084, 0.39396393, 0.36927304, 0.41960785)
+[connection signal="button_down" from="Draggable" to="." method="_on_draggable_button_down"]
+[connection signal="button_up" from="Draggable" to="." method="_on_draggable_button_up"]
