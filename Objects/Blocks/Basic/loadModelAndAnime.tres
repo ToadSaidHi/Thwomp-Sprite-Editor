@@ -1,8 +1,11 @@
 [gd_resource type="Resource" script_class="loadModel" format=3 uid="uid://b08j40nmiooc8"]
 
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_6alf5"]
 [ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/Classes/loadModel.gd" id="1_aqpwg"]
 [ext_resource type="Resource" uid="uid://b25nixh28b3vn" path="res://Objects/Block Types/AnimationAndModel.tres" id="1_tyi6b"]
+[ext_resource type="Resource" uid="uid://b82d7negs1o5l" path="res://Objects/Block Types/ArcData.tres" id="2_gcaw6"]
 [ext_resource type="Script" uid="uid://gyotv2locax4" path="res://Objects/Classes/StringSub.gd" id="2_xj6s5"]
+[ext_resource type="Resource" uid="uid://x8h57mullpp6" path="res://Objects/Block Types/Text.tres" id="3_gog1f"]
 
 [sub_resource type="Resource" id="Resource_xj6s5"]
 script = ExtResource("2_xj6s5")
@@ -13,8 +16,9 @@ metadata/_custom_type_script = "uid://gyotv2locax4"
 script = ExtResource("1_aqpwg")
 withAnime = true
 animeName = SubResource("Resource_xj6s5")
-Title = "Load Model and Animation [StringSub]"
+Title = "Load Model and Animation"
 Description = "Load a model with a starting animation (Required for any animations in the future)"
 Type = ExtResource("1_tyi6b")
+SubBlockInputs = Array[ExtResource("1_6alf5")]([ExtResource("2_gcaw6"), ExtResource("3_gog1f")])
 id = 1
 metadata/_custom_type_script = "uid://e7i0e2petq55"

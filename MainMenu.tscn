@@ -3,6 +3,7 @@
 [node name="MainMenu" type="Node2D" unique_id=708923123]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1706227575]
+zoom = Vector2(1.65, 1.65)
 
 [node name="New Project" type="Button" parent="." unique_id=1411149363]
 offset_left = -124.0

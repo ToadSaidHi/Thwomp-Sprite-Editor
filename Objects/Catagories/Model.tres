@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BlockCatagory" format=3 uid="uid://eegrq0e2bciq"]
+
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="1_qxujb"]
+[ext_resource type="Script" uid="uid://bdq4rv13fcqla" path="res://Objects/Classes/blockCatagory.gd" id="2_bombq"]
+[ext_resource type="Resource" uid="uid://sobfqdki4x1h" path="res://Objects/Blocks/Basic/loadModel.tres" id="2_l2a8u"]
+[ext_resource type="Resource" uid="uid://b08j40nmiooc8" path="res://Objects/Blocks/Basic/loadModelAndAnime.tres" id="3_jv2cn"]
+
+[resource]
+script = ExtResource("2_bombq")
+Name = "Model"
+Blocks = Array[ExtResource("1_qxujb")]([ExtResource("2_l2a8u"), ExtResource("3_jv2cn")])
+CatagoryColor = Color(0.80784315, 0.5921569, 0.41960785, 1)
+metadata/_custom_type_script = "uid://bdq4rv13fcqla"

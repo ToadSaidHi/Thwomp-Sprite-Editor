@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="loadModel" format=3 uid="uid://sobfqdki4x1h"]
 
 [ext_resource type="Resource" uid="uid://b25nixh28b3vn" path="res://Objects/Block Types/AnimationAndModel.tres" id="1_0mj6a"]
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_d5pcf"]
 [ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/Classes/loadModel.gd" id="1_fsich"]
+[ext_resource type="Resource" uid="uid://b82d7negs1o5l" path="res://Objects/Block Types/ArcData.tres" id="2_0clwg"]
 
 [resource]
 script = ExtResource("1_fsich")
 Title = "Load Model"
 Description = "Loads Model from Sprite arc data"
 Type = ExtResource("1_0mj6a")
+SubBlockInputs = Array[ExtResource("1_d5pcf")]([ExtResource("2_0clwg")])
 metadata/_custom_type_script = "uid://e7i0e2petq55"

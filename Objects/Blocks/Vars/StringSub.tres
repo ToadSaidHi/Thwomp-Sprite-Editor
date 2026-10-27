@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StringSubBlock" format=3 uid="uid://b62p67u484k2j"]
+
+[ext_resource type="Script" uid="uid://gyotv2locax4" path="res://Objects/Classes/StringSub.gd" id="1_djuf3"]
+[ext_resource type="Resource" uid="uid://x8h57mullpp6" path="res://Objects/Block Types/Text.tres" id="1_pdd2p"]
+
+[resource]
+script = ExtResource("1_djuf3")
+Title = "[TextBox]"
+Description = "InsertText"
+Type = ExtResource("1_pdd2p")
+metadata/_custom_type_script = "uid://gyotv2locax4"

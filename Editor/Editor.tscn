@@ -32,3 +32,4 @@ scale = Vector2(29.04, 1.4799988)
 color = Color(0.90588236, 0.827451, 0.53333336, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1928046784]
+zoom = Vector2(1.65, 1.65)

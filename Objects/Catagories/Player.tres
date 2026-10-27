@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BlockCatagory" format=3 uid="uid://cg6fyhql215g"]
+
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="1_npubf"]
+[ext_resource type="Script" uid="uid://bdq4rv13fcqla" path="res://Objects/Classes/blockCatagory.gd" id="2_vg88s"]
+
+[resource]
+script = ExtResource("2_vg88s")
+Name = "Player"
+CatagoryColor = Color(0.6117647, 0.34509805, 0.39215687, 1)
+metadata/_custom_type_script = "uid://bdq4rv13fcqla"

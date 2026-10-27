@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlockCatagory" format=3 uid="uid://ec5v2iukhaui"]
+
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="1_2xsox"]
+[ext_resource type="Resource" uid="uid://b62p67u484k2j" path="res://Objects/Blocks/Vars/StringSub.tres" id="2_42eo3"]
+[ext_resource type="Script" uid="uid://bdq4rv13fcqla" path="res://Objects/Classes/blockCatagory.gd" id="2_woivh"]
+
+[resource]
+script = ExtResource("2_woivh")
+Name = "Variables"
+Blocks = Array[ExtResource("1_2xsox")]([ExtResource("2_42eo3")])
+CatagoryColor = Color(0.90588236, 0.827451, 0.53333336, 1)
+metadata/_custom_type_script = "uid://bdq4rv13fcqla"
