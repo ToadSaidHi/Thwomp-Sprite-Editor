@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="loadModel" format=3 uid="uid://b08j40nmiooc8"]
+
+[ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/Classes/loadModel.gd" id="1_aqpwg"]
+[ext_resource type="Resource" uid="uid://b25nixh28b3vn" path="res://Objects/Block Types/AnimationAndModel.tres" id="1_tyi6b"]
+
+[resource]
+script = ExtResource("1_aqpwg")
+withAnime = true
+Title = "Load Model and Animation [StringSub]"
+Description = "Load a model with a starting animation (Required for any animations in the future)"
+Type = ExtResource("1_tyi6b")
+id = 1
+metadata/_custom_type_script = "uid://e7i0e2petq55"
