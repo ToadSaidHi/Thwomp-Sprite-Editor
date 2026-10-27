@@ -1,9 +1,16 @@
 [gd_resource type="Resource" script_class="loadModel" format=3 uid="uid://bwech5guqujpj"]
 
-[ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/Classes/loadModel.gd" id="1_sfcpi"]
-[ext_resource type="Resource" uid="uid://dj3vgt4d3nc6f" path="res://Objects/Sprites/ChefSpriteArcData.tres" id="2_i4j4x"]
+[ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/Classes/loadModel.gd" id="1_i4j4x"]
+[ext_resource type="Script" uid="uid://bruaurg26ga0b" path="res://Objects/Classes/spriteArcData.gd" id="2_ej5cx"]
+
+[sub_resource type="Resource" id="Resource_h0cvu"]
+script = ExtResource("2_ej5cx")
+arcFile = "GoodChef"
+brres = "goodchef.brres"
+mdl = "body_h"
+metadata/_custom_type_script = "uid://bruaurg26ga0b"
 
 [resource]
-script = ExtResource("1_sfcpi")
-sp = ExtResource("2_i4j4x")
+script = ExtResource("1_i4j4x")
+sp = SubResource("Resource_h0cvu")
 metadata/_custom_type_script = "uid://e7i0e2petq55"

@@ -4,6 +4,7 @@ func Build() -> String:
 	
 	for sp in Globals.allSprites:
 		var cpp = headers + "\n\n";
+		cpp += "const char* ModelLoaderConst [] = { \"<ARCNAME>\", NULL };\n\n".replace("<ARCNAME>", sp.arcData.arcFile)
 		cpp += "class " + sp.Name + " : public dEn_c {\npublic:\n\n"
 		cpp += "\tint onCreate();\n\tint onExecute();\n\tint onDelete();\n\tint onDraw();\n\n"
 		for v in sp.globalVars:
@@ -28,9 +29,24 @@ func Build() -> String:
 		for s in sp.States:
 			cpp += "CREATE_STATE(" + sp.Name + ", " + s.Name + ");\n"
 		cpp += "\n"
+		
+		cpp += "dActor_c* <NAME>::build() {void *buffer = AllocFromGameHeap1(sizeof(<NAME>));return new(buffer) <NAME>;}\n\n".replace("<NAME>", sp.Name)
+		
+		cpp += "const SpriteData <NAME>SpriteData = \n{ ProfileId::<NAME>, 0, 0, 0, 0, 0x100, 0x100, 0, 0, 0, 0, 0 };\n\n".replace("<NAME>", sp.Name)
+		
+		cpp += "Profile <NAME>Profile(&<NAME>::build, SpriteId::<NAME>, &<NAME>SpriteData, ProfileId::<NAME>, ProfileId::<NAME>, \"<NAME>\", ModelLoaderConst);\n\n".replace("<NAME>", sp.Name)
+		
 		for f in sp.Functs:
 			cpp += buildFunction(sp, f)
 		cpp += buildFunction(sp, sp.onCreate)
+		cpp += buildFunction(sp, sp.onExecute)
+		cpp += buildFunction(sp, sp.onDraw)
+		cpp += buildFunction(sp, sp.onDelete)
+		
+		for s in sp.States:
+			cpp += buildStateFunction(sp, s.Begin, s)
+			cpp += buildStateFunction(sp, s.Execute, s)
+			cpp += buildStateFunction(sp, s.End, s)
 		
 		print(cpp)
 		saveToFile(sp, cpp)
@@ -51,6 +67,30 @@ func buildFunction(s : CustomSprite, f : CustomFunction) -> String:
 			argList += ", "
 		x+=1
 	out +=  f.returnType + " " + s.Name + "::" + f.Name + "(" + argList + "){\n"
+	for b in f.lines:
+		var y = 0
+		while y < tabCount:
+			y+= 1
+			out += "\t"
+		
+		out += b.convertToCode() + "\n"
+	out += "}\n\n"
+	
+	return out;
+
+
+func buildStateFunction(s : CustomSprite, f : CustomFunction, st : customState) -> String:
+	var out = ""
+	var tabCount = 1;
+	var argList = ""
+	var x = 1;
+	var allArgs = f.Arguments.size()
+	for a in f.Arguments:
+		argList += a.type + " " + a.Name
+		if(x != allArgs):
+			argList += ", "
+		x+=1
+	out +=  f.returnType + " " + s.Name + "::" + f.Name + "_" + st.Name + "(" + argList + "){\n"
 	for b in f.lines:
 		var y = 0
 		while y < tabCount:

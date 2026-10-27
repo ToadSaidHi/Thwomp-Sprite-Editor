@@ -1,0 +1,133 @@
+[gd_resource type="Resource" script_class="CustomSprite" format=3 uid="uid://3pvit34qe3w5"]
+
+[ext_resource type="Script" uid="uid://dr8osbp47ncfq" path="res://Objects/Classes/Funct.gd" id="1_cmw8s"]
+[ext_resource type="Script" uid="uid://0lt8g8m4rrxc" path="res://Objects/Classes/variable.gd" id="2_jwnkf"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="3_bx0au"]
+[ext_resource type="Script" uid="uid://cfddph5fg4o1l" path="res://Objects/Classes/State.gd" id="4_cnryu"]
+[ext_resource type="Resource" uid="uid://dj3vgt4d3nc6f" path="res://Objects/Sprites/ChefSpriteArcData.tres" id="5_8sqcx"]
+[ext_resource type="Resource" uid="uid://bwech5guqujpj" path="res://Objects/Sprites/loadModelChef.tres" id="6_fbu66"]
+[ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Classes/Sprite.gd" id="7_jajom"]
+
+[sub_resource type="Resource" id="Resource_cmw8s"]
+script = ExtResource("2_jwnkf")
+type = "u8"
+value = "0"
+Name = "ArgOne"
+metadata/_custom_type_script = "uid://0lt8g8m4rrxc"
+
+[sub_resource type="Resource" id="Resource_jwnkf"]
+script = ExtResource("2_jwnkf")
+type = "m3d::mdl_c"
+Name = "ArgTwo"
+metadata/_custom_type_script = "uid://0lt8g8m4rrxc"
+
+[sub_resource type="Resource" id="Resource_bx0au"]
+script = ExtResource("1_cmw8s")
+Name = "ExtraFunction"
+Arguments = Array[ExtResource("2_jwnkf")]([SubResource("Resource_cmw8s"), SubResource("Resource_jwnkf")])
+returnType = "void"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_cnryu"]
+script = ExtResource("1_cmw8s")
+Name = "beginState"
+returnType = "void"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_8sqcx"]
+script = ExtResource("1_cmw8s")
+Name = "endState"
+returnType = "void"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_fbu66"]
+script = ExtResource("1_cmw8s")
+Name = "executeState"
+returnType = "void"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_jajom"]
+script = ExtResource("4_cnryu")
+Name = "StateOne"
+Begin = SubResource("Resource_cnryu")
+Execute = SubResource("Resource_fbu66")
+End = SubResource("Resource_8sqcx")
+metadata/_custom_type_script = "uid://cfddph5fg4o1l"
+
+[sub_resource type="Resource" id="Resource_feao8"]
+script = ExtResource("1_cmw8s")
+Name = "beginState"
+returnType = "void"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_jx6jw"]
+script = ExtResource("1_cmw8s")
+Name = "endState"
+returnType = "void"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_agoc6"]
+script = ExtResource("1_cmw8s")
+Name = "executeState"
+returnType = "void"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_j5uim"]
+script = ExtResource("4_cnryu")
+Name = "StateTwo"
+Begin = SubResource("Resource_feao8")
+Execute = SubResource("Resource_agoc6")
+End = SubResource("Resource_jx6jw")
+metadata/_custom_type_script = "uid://cfddph5fg4o1l"
+
+[sub_resource type="Resource" id="Resource_ssnrp"]
+script = ExtResource("2_jwnkf")
+type = "int"
+value = "0"
+Name = "GlobalVarOne"
+metadata/_custom_type_script = "uid://0lt8g8m4rrxc"
+
+[sub_resource type="Resource" id="Resource_nb88c"]
+script = ExtResource("2_jwnkf")
+type = "bool"
+value = "true"
+Name = "GlobalVarTwo"
+metadata/_custom_type_script = "uid://0lt8g8m4rrxc"
+
+[sub_resource type="Resource" id="Resource_fk0vg"]
+script = ExtResource("1_cmw8s")
+Name = "onCreate"
+lines = Array[ExtResource("3_bx0au")]([ExtResource("6_fbu66")])
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_g4jda"]
+script = ExtResource("1_cmw8s")
+Name = "onDelete"
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_dkd5q"]
+script = ExtResource("1_cmw8s")
+Name = "onDraw"
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_nerj8"]
+script = ExtResource("1_cmw8s")
+Name = "onExecute"
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[resource]
+script = ExtResource("7_jajom")
+Name = "goodChef"
+Functs = Array[ExtResource("1_cmw8s")]([SubResource("Resource_bx0au")])
+globalVars = Array[ExtResource("2_jwnkf")]([SubResource("Resource_ssnrp"), SubResource("Resource_nb88c")])
+arcData = ExtResource("5_8sqcx")
+States = Array[ExtResource("4_cnryu")]([SubResource("Resource_jajom"), SubResource("Resource_j5uim")])
+onCreate = SubResource("Resource_fk0vg")
+onDraw = SubResource("Resource_dkd5q")
+onExecute = SubResource("Resource_nerj8")
+onDelete = SubResource("Resource_g4jda")
+metadata/_custom_type_script = "uid://r5du4vthdi1o"
