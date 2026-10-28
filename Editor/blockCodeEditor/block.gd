@@ -18,9 +18,7 @@ func _ready() -> void:
 
 func setColor():
 	$Base.modulate = (block.Type.color)
-	#$"Base/Down Point".modulate.r -= block.Type.color.r
-	#$"Base/Down Point".modulate.g -= block.Type.color.g
-	#$"Base/Down Point".modulate.b -= block.Type.color.b
+
 
 
 
