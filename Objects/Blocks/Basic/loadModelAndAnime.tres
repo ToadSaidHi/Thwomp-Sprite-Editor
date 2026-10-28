@@ -22,6 +22,6 @@ SubBlocks = Array[ExtResource("4_gog1f")]([ExtResource("5_gog1f")])
 Title = "Load Model and Animation"
 Description = "Load a model with a starting animation (Required for any animations in the future)"
 Type = ExtResource("1_tyi6b")
-SubBlockInputs = Array[ExtResource("1_6alf5")]([ExtResource("2_gcaw6"), ExtResource("3_gog1f")])
+SubBlockInputs = Array[ExtResource("1_6alf5")]([ExtResource("3_gog1f"), ExtResource("2_gcaw6")])
 id = 1
 metadata/_custom_type_script = "uid://e7i0e2petq55"

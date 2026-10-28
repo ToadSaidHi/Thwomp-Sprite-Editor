@@ -72,6 +72,7 @@ var newArea = null
 
 func _on_insert_area_area_exited(area: Area2D) -> void:
 	if(area == newArea):
+		#newArea.setSubBlock(null, null)
 		newArea = null
 
 

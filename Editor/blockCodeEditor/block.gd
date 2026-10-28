@@ -4,6 +4,8 @@ extends Node2D
 
 @export var subBlockNodes : Array[Node2D]
 
+
+
 var dragging: bool = false
 var mouseOff: Vector2 = Vector2.ZERO
 
@@ -46,6 +48,9 @@ func _process(delta: float) -> void:
 	if (subBlockNodes.size() > 3 and subBlockNodes.get(3) != null):
 					subBlockNodes.get(3).global_position = $Hole4.global_position
 					subBlockNodes.get(3).global_position.y -= 10
+	for i in $Tail.get_children():
+		i.global_position.x = global_position.x
+		i.global_position.y = global_position.y - 150
 
 func insertSubBlock(loc : int, sblock : subBlock, node : Node2D):
 	print (block.SubBlocks.size())
@@ -116,3 +121,23 @@ func _on_draggable_button_down() -> void:
 
 func _on_draggable_button_up() -> void:
 	dragging = false
+	if (BigBlockArea != null):
+		BigBlockArea.get_parent().adopt(self)
+
+var BigBlockArea
+
+func _on_head_area_area_entered(area: Area2D) -> void:
+	BigBlockArea = area
+
+
+func _on_head_area_area_exited(area: Area2D) -> void:
+	BigBlockArea = null
+
+func adopt(newBlock : Node2D):
+	print("ADOPT")
+	for i in $Tail.get_children():
+		$Tail.remove_child(i)
+	#newBlock.get_parent().remove_child(newBlock)
+	newBlock.reparent($Tail)
+	#$Tail.add_child(newBlock)
+	

@@ -37,4 +37,8 @@ script = ExtResource("1_nek0n")
 position = Vector2(10, 349)
 block = ExtResource("2_nek0n")
 
+[node name="Block2" parent="SubViewportContainer/SubViewport/Blocks" unique_id=108235784 instance=ExtResource("1_wq067")]
+position = Vector2(265.33334, 634)
+block = ExtResource("2_nek0n")
+
 [node name="subBlock" parent="SubViewportContainer/SubViewport/Blocks" unique_id=1320245866 instance=ExtResource("2_ect36")]
