@@ -1,108 +1,29 @@
 [gd_scene format=3 uid="uid://dtbruwd2yosyd"]
 
 [ext_resource type="Script" uid="uid://bvl0kxjuakq5k" path="res://Editor/blockCodeEditor/sub_block.gd" id="1_t4uby"]
-[ext_resource type="Resource" uid="uid://b62p67u484k2j" path="res://Objects/Blocks/Vars/StringSub.tres" id="2_m1ldg"]
-[ext_resource type="Script" uid="uid://bx3web8d3xgfd" path="res://Editor/blockCodeEditor/HoleArea.gd" id="3_hrw8n"]
+[ext_resource type="Resource" uid="uid://cgcpvi2l542l5" path="res://Objects/Blocks/getFromSprite/getArcDatFromSprite.tres" id="2_t4uby"]
 [ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="4_u72yf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc2ms"]
-size = Vector2(81, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4uby"]
+size = Vector2(100.5, 130)
 
 [node name="subBlock" type="Node2D" unique_id=650439733]
 script = ExtResource("1_t4uby")
-block = ExtResource("2_m1ldg")
+block = ExtResource("2_t4uby")
 
 [node name="Base" type="ColorRect" parent="." unique_id=166731568]
-offset_right = 120.0
-offset_bottom = 150.0
-
-[node name="Up Point" type="ColorRect" parent="Base" unique_id=1953721219]
-layout_mode = 0
-offset_left = 20.0
-offset_top = -40.0
-offset_right = 100.0
-
-[node name="Down Point" type="ColorRect" parent="Base" unique_id=13030419]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 110.0
-offset_right = 100.0
-offset_bottom = 150.0
-color = Color(0.20784314, 0.2, 0.21568628, 1)
+offset_top = 10.0
+offset_bottom = 140.0
 
 [node name="Extension" type="ColorRect" parent="Base" unique_id=2078302038]
 layout_mode = 0
-offset_left = 120.0
-offset_right = 220.0
-offset_bottom = 150.0
-
-[node name="Hole1" type="ColorRect" parent="." unique_id=1664895739]
-offset_top = 10.0
-offset_right = 80.0
-offset_bottom = 140.0
-color = Color(0.20784314, 0.2, 0.21568628, 1)
-
-[node name="Area2D" type="Area2D" parent="Hole1" unique_id=64114913]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("3_hrw8n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole1/Area2D" unique_id=508280507]
-position = Vector2(39.5, 65)
-shape = SubResource("RectangleShape2D_lc2ms")
-
-[node name="Hole2" type="ColorRect" parent="." unique_id=393556413]
-visible = false
-offset_top = 10.0
-offset_right = 80.0
-offset_bottom = 140.0
-color = Color(0.20784314, 0.2, 0.21568628, 1)
-
-[node name="Area2D" type="Area2D" parent="Hole2" unique_id=1632491608]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("3_hrw8n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole2/Area2D" unique_id=1724873841]
-position = Vector2(39.5, 65)
-shape = SubResource("RectangleShape2D_lc2ms")
-
-[node name="Hole3" type="ColorRect" parent="." unique_id=414438623]
-visible = false
-offset_top = 10.0
-offset_right = 80.0
-offset_bottom = 140.0
-color = Color(0.20784314, 0.2, 0.21568628, 1)
-
-[node name="Area2D" type="Area2D" parent="Hole3" unique_id=2056864807]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("3_hrw8n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole3/Area2D" unique_id=721508624]
-position = Vector2(39.5, 65)
-shape = SubResource("RectangleShape2D_lc2ms")
-
-[node name="Hole4" type="ColorRect" parent="." unique_id=1402587966]
-visible = false
-offset_top = 10.0
-offset_right = 80.0
-offset_bottom = 140.0
-color = Color(0.20784314, 0.2, 0.21568628, 1)
-
-[node name="Area2D" type="Area2D" parent="Hole4" unique_id=1971174986]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("3_hrw8n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole4/Area2D" unique_id=1077071111]
-position = Vector2(39.5, 65)
-shape = SubResource("RectangleShape2D_lc2ms")
+offset_right = 100.0
+offset_bottom = 130.0
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=1553448087]
-offset_left = 100.0
+offset_left = 10.0
 offset_top = 1.0
-offset_right = 200.0
+offset_right = 446.0
 offset_bottom = 151.0
 theme = ExtResource("4_u72yf")
 theme_override_colors/default_color = Color(0.20784314, 0.2, 0.21568628, 1)
@@ -118,5 +39,15 @@ offset_right = 12.0
 offset_bottom = 150.0
 flat = true
 
+[node name="InsertArea" type="Area2D" parent="." unique_id=1312022920]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InsertArea" unique_id=1132358745]
+position = Vector2(49.75, 75)
+shape = SubResource("RectangleShape2D_t4uby")
+
 [connection signal="button_down" from="Draggable" to="." method="_on_draggable_button_down"]
 [connection signal="button_up" from="Draggable" to="." method="_on_draggable_button_up"]
+[connection signal="area_entered" from="InsertArea" to="." method="_on_insert_area_area_entered"]
+[connection signal="area_exited" from="InsertArea" to="." method="_on_insert_area_area_exited"]

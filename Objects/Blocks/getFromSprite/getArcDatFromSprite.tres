@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="arcDatFromSprite" format=3 uid="uid://cgcpvi2l542l5"]
+
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_gcxam"]
+[ext_resource type="Resource" uid="uid://b82d7negs1o5l" path="res://Objects/Block Types/ArcData.tres" id="2_jmtqn"]
+[ext_resource type="Script" uid="uid://dbyrptb50veq3" path="res://Objects/Classes/arcDatFromSprite.gd" id="3_8o2se"]
+
+[resource]
+script = ExtResource("3_8o2se")
+Title = "Get Arc Info From Sprite Data"
+Type = ExtResource("2_jmtqn")
+metadata/_custom_type_script = "uid://whbkuqa2t0pt"

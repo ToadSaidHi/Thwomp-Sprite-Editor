@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_l71ns")
 Name = "ArcData"
-color = Color(0.56078434, 0.61960787, 0.8352941, 1)
+color = Color(0.9628611, 0.50079954, 0.716356, 1)
 metadata/_custom_type_script = "uid://b30t1q3f3e4cu"

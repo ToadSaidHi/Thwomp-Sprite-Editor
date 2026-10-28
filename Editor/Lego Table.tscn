@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bcin6ridffu3u"]
+
+[ext_resource type="Script" uid="uid://jcybcd3neb3q" path="res://Editor/LegoTableCameraInside.gd" id="1_nek0n"]
+[ext_resource type="PackedScene" uid="uid://2m7tn7y8s3ux" path="res://Editor/blockCodeEditor/Block.tscn" id="1_wq067"]
+[ext_resource type="PackedScene" uid="uid://dtbruwd2yosyd" path="res://Editor/blockCodeEditor/subBlock.tscn" id="2_ect36"]
+[ext_resource type="Resource" uid="uid://b08j40nmiooc8" path="res://Objects/Blocks/Basic/loadModelAndAnime.tres" id="2_nek0n"]
+
+[node name="LegoTable" type="Node2D" unique_id=1912854958]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=932700197]
+offset_left = -1409.0
+offset_top = -777.0
+offset_right = 98591.0
+offset_bottom = 999223.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=843572750]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1533447110]
+offset_left = -558.0
+offset_top = -520.0
+offset_right = 142.0
+offset_bottom = 180.0
+scale = Vector2(1.5, 1.5)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1044507882]
+handle_input_locally = false
+size = Vector2i(700, 700)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport" unique_id=2081956489]
+zoom = Vector2(0.5, 0.5)
+script = ExtResource("1_nek0n")
+
+[node name="Blocks" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1417869973]
+
+[node name="Block" parent="SubViewportContainer/SubViewport/Blocks" unique_id=650439733 instance=ExtResource("1_wq067")]
+position = Vector2(10, 349)
+block = ExtResource("2_nek0n")
+
+[node name="subBlock" parent="SubViewportContainer/SubViewport/Blocks" unique_id=1320245866 instance=ExtResource("2_ect36")]

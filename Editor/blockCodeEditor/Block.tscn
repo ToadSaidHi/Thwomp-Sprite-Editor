@@ -45,6 +45,8 @@ color = Color(0.20784314, 0.2, 0.21568628, 1)
 [node name="Area2D" type="Area2D" parent="Hole1" unique_id=64114913]
 collision_layer = 4
 collision_mask = 0
+collision_priority = 2.0
+priority = 2
 script = ExtResource("3_tug77")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole1/Area2D" unique_id=508280507]
@@ -62,6 +64,7 @@ color = Color(0.20784314, 0.2, 0.21568628, 1)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_tug77")
+HoleNum = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole2/Area2D" unique_id=1724873841]
 position = Vector2(39.5, 65)
@@ -78,6 +81,7 @@ color = Color(0.20784314, 0.2, 0.21568628, 1)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_tug77")
+HoleNum = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole3/Area2D" unique_id=721508624]
 position = Vector2(39.5, 65)
@@ -94,6 +98,7 @@ color = Color(0.20784314, 0.2, 0.21568628, 1)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("3_tug77")
+HoleNum = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole4/Area2D" unique_id=1077071111]
 position = Vector2(39.5, 65)
