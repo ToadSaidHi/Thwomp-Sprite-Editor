@@ -4,7 +4,7 @@
 ---------------------------------------------------------------
 
 Sprite Editor Created Originally by ToadSaidHi
-[Logo]([https://python.org](https://github.com/ToadSaidHi/Thwomp-Sprite-Editor/blob/main/Assets/png/bigThwomp.png?raw=true))
+![Logo]([https://python.org](https://github.com/ToadSaidHi/Thwomp-Sprite-Editor/blob/main/Assets/png/bigThwomp.png?raw=true))
 
 
 
