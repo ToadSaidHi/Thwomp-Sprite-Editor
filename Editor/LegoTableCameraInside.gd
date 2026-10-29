@@ -15,3 +15,5 @@ func _process(delta: float) -> void:
 		zoom.x += -.1
 		zoom.y += -.1
 	$"../wallpaper".scale = Vector2(7,7) / $"../Camera2D".zoom
+	$Trash.scale = Vector2(10,10) / ($"../Camera2D".zoom * 2)
+	$Trash.position = Vector2(550, 580) / ($"../Camera2D".zoom * 2)

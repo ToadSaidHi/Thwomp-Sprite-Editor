@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://brpcr35l32tg6" path="res://Assets/png/Thwomp 18x18.png" id="3_2suse"]
 [ext_resource type="Script" uid="uid://c4wtmywopxvls" path="res://Editor/wallpaper.gd" id="3_bf5ks"]
 [ext_resource type="Resource" uid="uid://b62p67u484k2j" path="res://Objects/Blocks/Vars/StringSub.tres" id="6_6aulk"]
+[ext_resource type="Texture2D" uid="uid://cxg7h4xcwoldx" path="res://Assets/png/Trash.png" id="6_8g8mm"]
 [ext_resource type="PackedScene" uid="uid://b1xhkmqtgn1nc" path="res://Editor/blockCodeEditor/StarterBlock.tscn" id="6_vmv48"]
+[ext_resource type="Script" uid="uid://b06h3asu6du1i" path="res://Editor/trashArea.gd" id="7_be53r"]
+[ext_resource type="Script" uid="uid://ksqaw8rd2l4b" path="res://Editor/trashSprite.gd" id="7_heths"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf5ks"]
 texture = ExtResource("2_4fyfc")
@@ -25,6 +28,9 @@ texture_region_size = Vector2i(18, 18)
 tile_size = Vector2i(14, 27)
 sources/0 = SubResource("TileSetAtlasSource_bf5ks")
 sources/1 = SubResource("TileSetAtlasSource_vmv48")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lc2ms"]
+radius = 6.352956
 
 [node name="LegoTable" type="Node2D" unique_id=1912854958]
 script = ExtResource("1_aioqr")
@@ -61,6 +67,21 @@ script = ExtResource("3_bf5ks")
 zoom = Vector2(0.5, 0.5)
 script = ExtResource("1_nek0n")
 
+[node name="Trash" type="Sprite2D" parent="SubViewportContainer/SubViewport/Camera2D" unique_id=918410706]
+texture_filter = 1
+position = Vector2(617.3334, 614.6667)
+scale = Vector2(10, 10)
+texture = ExtResource("6_8g8mm")
+script = ExtResource("7_heths")
+
+[node name="Area2D" type="Area2D" parent="SubViewportContainer/SubViewport/Camera2D/Trash" unique_id=1488718992]
+collision_layer = 6
+collision_mask = 0
+script = ExtResource("7_be53r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Camera2D/Trash/Area2D" unique_id=1288759600]
+shape = SubResource("CircleShape2D_lc2ms")
+
 [node name="Blocks" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=1417869973]
 
 [node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Blocks" unique_id=428099056]
@@ -73,7 +94,7 @@ flat = true
 [node name="StartBlock" parent="SubViewportContainer/SubViewport/Blocks" unique_id=650439733 instance=ExtResource("6_vmv48")]
 
 [node name="Block" parent="SubViewportContainer/SubViewport/Blocks" unique_id=1816226974 instance=ExtResource("1_wq067")]
-position = Vector2(10, 349)
+position = Vector2(52.666668, 364.66666)
 block = ExtResource("2_nek0n")
 
 [node name="Block2" parent="SubViewportContainer/SubViewport/Blocks" unique_id=108235784 instance=ExtResource("1_wq067")]

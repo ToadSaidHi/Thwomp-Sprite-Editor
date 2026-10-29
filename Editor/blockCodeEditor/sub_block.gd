@@ -98,3 +98,5 @@ func _on_insert_area_area_entered(area: Area2D) -> void:
 		if(area.getHoleType() == block.Type):
 			print(area.getHoleType().Name)
 			newArea = area
+	elif area.has_method("iAmTrashCan"):
+		newArea = area
