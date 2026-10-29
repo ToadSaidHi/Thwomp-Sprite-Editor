@@ -11,8 +11,8 @@ var mouseOff: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	
-	var sp : CustomSprite = load("res://Objects/Sprites/GoodChefSprite.tres")
-	Globals.currentEditingFunction = sp.onCreate
+	#var sp : CustomSprite = load("res://Objects/Sprites/GoodChefSprite.tres")
+	#Globals.currentEditingFunction = sp.onCreate
 	
 	if(Globals.currentEditingFunction != null):
 		$Title.text = Globals.currentEditingFunction.Name + "()"

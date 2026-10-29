@@ -17,3 +17,12 @@ func _on_button_button_down() -> void:
 
 func _on_button_button_up() -> void:
 	dragging = false
+
+func summonBlock(bl : Block):
+	var blockNode : Node2D
+	if bl.has_method("IamSubBlock"):
+		blockNode = preload("res://Editor/blockCodeEditor/subBlock.tscn").instantiate()
+	else:
+		blockNode = preload("res://Editor/blockCodeEditor/Block.tscn").instantiate()
+	blockNode.block = bl
+	Globals.BlockFolder.add_child(blockNode)

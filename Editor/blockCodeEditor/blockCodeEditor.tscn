@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b3gq61nt7wic4"]
 
+[ext_resource type="PackedScene" uid="uid://bcin6ridffu3u" path="res://Editor/Lego Table.tscn" id="1_bix43"]
 [ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="1_d6kr4"]
+[ext_resource type="Script" uid="uid://cdygkc8y4bbev" path="res://Editor/blockCodeEditor/block_code_editor.gd" id="1_pdqax"]
 [ext_resource type="Script" uid="uid://cae20hqqygx8i" path="res://Editor/blockCodeEditor/CatagoryLabels.gd" id="2_xe3cp"]
 [ext_resource type="Resource" uid="uid://eegrq0e2bciq" path="res://Objects/Catagories/Model.tres" id="3_ivwsq"]
 [ext_resource type="Resource" uid="uid://ec5v2iukhaui" path="res://Objects/Catagories/Variable.tres" id="4_ryloh"]
@@ -9,6 +11,11 @@
 [ext_resource type="Resource" uid="uid://cdrulhwe6o76f" path="res://Objects/Catagories/World.tres" id="6_2j130"]
 
 [node name="BlockCodeEditor" type="Node2D" unique_id=1030842470]
+script = ExtResource("1_pdqax")
+
+[node name="LegoTable" parent="." unique_id=1912854958 instance=ExtResource("1_bix43")]
+position = Vector2(133, -3.0000002)
+scale = Vector2(0.65, 0.65)
 
 [node name="Catagories" type="Node2D" parent="." unique_id=1145216447]
 position = Vector2(-95, -21)
@@ -195,3 +202,8 @@ flat = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=155870850]
 zoom = Vector2(1.65, 1.65)
+
+[connection signal="button_up" from="Catagories/Catagory 1/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Catagories/Catagory 2/Button" to="." method="_on_button_button2_up"]
+[connection signal="button_up" from="Catagories/Catagory 3/Button" to="." method="_on_button_button3_up"]
+[connection signal="button_up" from="Catagories/Catagory 4/Button" to="." method="_on_button_button4_up"]

@@ -2,13 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ca0rhtpipshl8" path="res://Editor/lego_table.gd" id="1_aioqr"]
 [ext_resource type="Script" uid="uid://jcybcd3neb3q" path="res://Editor/LegoTableCameraInside.gd" id="1_nek0n"]
-[ext_resource type="PackedScene" uid="uid://2m7tn7y8s3ux" path="res://Editor/blockCodeEditor/Block.tscn" id="1_wq067"]
 [ext_resource type="Texture2D" uid="uid://bpnf3pd1865nf" path="res://Assets/png/miniThwomp.png" id="2_4fyfc"]
-[ext_resource type="PackedScene" uid="uid://dtbruwd2yosyd" path="res://Editor/blockCodeEditor/subBlock.tscn" id="2_ect36"]
-[ext_resource type="Resource" uid="uid://b08j40nmiooc8" path="res://Objects/Blocks/Basic/loadModelAndAnime.tres" id="2_nek0n"]
 [ext_resource type="Texture2D" uid="uid://brpcr35l32tg6" path="res://Assets/png/Thwomp 18x18.png" id="3_2suse"]
 [ext_resource type="Script" uid="uid://c4wtmywopxvls" path="res://Editor/wallpaper.gd" id="3_bf5ks"]
-[ext_resource type="Resource" uid="uid://b62p67u484k2j" path="res://Objects/Blocks/Vars/StringSub.tres" id="6_6aulk"]
 [ext_resource type="Texture2D" uid="uid://cxg7h4xcwoldx" path="res://Assets/png/Trash.png" id="6_8g8mm"]
 [ext_resource type="PackedScene" uid="uid://b1xhkmqtgn1nc" path="res://Editor/blockCodeEditor/StarterBlock.tscn" id="6_vmv48"]
 [ext_resource type="Script" uid="uid://b06h3asu6du1i" path="res://Editor/trashArea.gd" id="7_be53r"]
@@ -35,25 +31,24 @@ radius = 6.352956
 [node name="LegoTable" type="Node2D" unique_id=1912854958]
 script = ExtResource("1_aioqr")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=932700197]
-offset_left = -1409.0
-offset_top = -777.0
-offset_right = 98591.0
-offset_bottom = 999223.0
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=843572750]
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1533447110]
-offset_left = -558.0
+offset_left = -750.0
 offset_top = -520.0
-offset_right = 142.0
+offset_right = 250.0
 offset_bottom = 180.0
 scale = Vector2(1.5, 1.5)
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1044507882]
 handle_input_locally = false
-size = Vector2i(700, 700)
+size = Vector2i(1000, 700)
 render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=932700197]
+offset_left = -47004.668
+offset_top = -44160.668
+offset_right = 52995.332
+offset_bottom = 955839.3
+color = Color(0.26075858, 0.25147375, 0.27004695, 1)
 
 [node name="wallpaper" type="TileMapLayer" parent="SubViewportContainer/SubViewport" unique_id=464216992]
 texture_filter = 1
@@ -64,7 +59,7 @@ tile_set = SubResource("TileSet_lc2ms")
 script = ExtResource("3_bf5ks")
 
 [node name="Camera2D" type="Camera2D" parent="SubViewportContainer/SubViewport" unique_id=2081956489]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.3, 0.3)
 script = ExtResource("1_nek0n")
 
 [node name="Trash" type="Sprite2D" parent="SubViewportContainer/SubViewport/Camera2D" unique_id=918410706]
@@ -92,19 +87,7 @@ offset_bottom = 28028.664
 flat = true
 
 [node name="StartBlock" parent="SubViewportContainer/SubViewport/Blocks" unique_id=650439733 instance=ExtResource("6_vmv48")]
-
-[node name="Block" parent="SubViewportContainer/SubViewport/Blocks" unique_id=1816226974 instance=ExtResource("1_wq067")]
-position = Vector2(52.666668, 364.66666)
-block = ExtResource("2_nek0n")
-
-[node name="Block2" parent="SubViewportContainer/SubViewport/Blocks" unique_id=108235784 instance=ExtResource("1_wq067")]
-position = Vector2(265.33334, 634)
-block = ExtResource("2_nek0n")
-
-[node name="subBlock" parent="SubViewportContainer/SubViewport/Blocks" unique_id=1320245866 instance=ExtResource("2_ect36")]
-
-[node name="subBlock2" parent="SubViewportContainer/SubViewport/Blocks" unique_id=764089189 instance=ExtResource("2_ect36")]
-block = ExtResource("6_6aulk")
+position = Vector2(-325.33334, -352.6667)
 
 [connection signal="button_down" from="SubViewportContainer/SubViewport/Blocks/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="SubViewportContainer/SubViewport/Blocks/Button" to="." method="_on_button_button_up"]
