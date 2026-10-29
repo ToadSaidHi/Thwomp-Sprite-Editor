@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Scroll Down"):
 		zoom.x += -.1
 		zoom.y += -.1
+	$"../wallpaper".scale = Vector2(7,7) / $"../Camera2D".zoom
