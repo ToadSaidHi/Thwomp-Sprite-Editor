@@ -56,6 +56,9 @@ func insertSubBlock(loc : int, sblock : subBlock, node : Node2D):
 	#block.SubBlocks.remove_at(loc+1)
 	print (subBlockNodes.size())
 	subBlockNodes[loc] = node
+	
+	
+	
 	#subBlockNodes.remove_at(loc+1)
 	
 	

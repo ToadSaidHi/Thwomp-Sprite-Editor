@@ -72,6 +72,7 @@ func _on_draggable_button_up() -> void:
 	elif (newArea == null and linkedArea != null):
 		linkedArea.setSubBlock(null, null)
 		linkedArea = null
+		
 	elif (newArea != null and linkedArea != null and newArea != linkedArea):
 		linkedArea.setSubBlock(null, null)
 		newArea.setSubBlock(block, self)
