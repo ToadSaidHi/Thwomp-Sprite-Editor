@@ -12,7 +12,7 @@ var sizeT = 80
 
 
 func _ready() -> void:
-	
+	$InsertArea/CollisionShape2D.shape = load("res://Objects/Blocks/subBlockCollisionShape.res").duplicate()
 	print(block.Type.Name)
 	
 	$Title.text = block.Title
@@ -49,8 +49,9 @@ func growBlock():
 	
 	
 	$Draggable.size.x = e.size.x
-	$InsertArea/CollisionShape2D.shape.size.x = $Draggable.size.x
+	$InsertArea/CollisionShape2D.shape.size.x = e.size.x
 	sizeT = e.size.x
+	$InsertArea.position.x =( $InsertArea/CollisionShape2D.shape.size.x / 2 )- 50
 	
 
 
@@ -65,10 +66,21 @@ func _on_draggable_button_down() -> void:
 
 func _on_draggable_button_up() -> void:
 	dragging = false
-	if(newArea != null):
+	if(newArea != null and linkedArea == null):
 		newArea.setSubBlock(block, self)
+		linkedArea = newArea
+	elif (newArea == null and linkedArea != null):
+		linkedArea.setSubBlock(null, null)
+		linkedArea = null
+	elif (newArea != null and linkedArea != null and newArea != linkedArea):
+		linkedArea.setSubBlock(null, null)
+		newArea.setSubBlock(block, self)
+		linkedArea = newArea
+		#linkedArea
+	
 
 var newArea = null
+var linkedArea = null
 
 func _on_insert_area_area_exited(area: Area2D) -> void:
 	if(area == newArea):

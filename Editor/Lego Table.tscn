@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bcin6ridffu3u"]
 
+[ext_resource type="Script" uid="uid://ca0rhtpipshl8" path="res://Editor/lego_table.gd" id="1_aioqr"]
 [ext_resource type="Script" uid="uid://jcybcd3neb3q" path="res://Editor/LegoTableCameraInside.gd" id="1_nek0n"]
 [ext_resource type="PackedScene" uid="uid://2m7tn7y8s3ux" path="res://Editor/blockCodeEditor/Block.tscn" id="1_wq067"]
 [ext_resource type="PackedScene" uid="uid://dtbruwd2yosyd" path="res://Editor/blockCodeEditor/subBlock.tscn" id="2_ect36"]
 [ext_resource type="Resource" uid="uid://b08j40nmiooc8" path="res://Objects/Blocks/Basic/loadModelAndAnime.tres" id="2_nek0n"]
+[ext_resource type="Resource" uid="uid://b62p67u484k2j" path="res://Objects/Blocks/Vars/StringSub.tres" id="6_6aulk"]
 
 [node name="LegoTable" type="Node2D" unique_id=1912854958]
+script = ExtResource("1_aioqr")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=932700197]
 offset_left = -1409.0
@@ -42,3 +45,6 @@ position = Vector2(265.33334, 634)
 block = ExtResource("2_nek0n")
 
 [node name="subBlock" parent="SubViewportContainer/SubViewport/Blocks" unique_id=1320245866 instance=ExtResource("2_ect36")]
+
+[node name="subBlock2" parent="SubViewportContainer/SubViewport/Blocks" unique_id=764089189 instance=ExtResource("2_ect36")]
+block = ExtResource("6_6aulk")

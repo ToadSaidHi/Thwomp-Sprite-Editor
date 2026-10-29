@@ -50,14 +50,14 @@ func _process(delta: float) -> void:
 					subBlockNodes.get(3).global_position.y -= 10
 	for i in $Tail.get_children():
 		i.global_position.x = global_position.x
-		i.global_position.y = global_position.y - 150
+		i.global_position.y = global_position.y + 150
 
 func insertSubBlock(loc : int, sblock : subBlock, node : Node2D):
 	print (block.SubBlocks.size())
-	block.SubBlocks[loc-1] = sblock
+	block.SubBlocks[loc] = sblock
 	#block.SubBlocks.remove_at(loc+1)
 	print (subBlockNodes.size())
-	subBlockNodes[loc-1] = node
+	subBlockNodes[loc] = node
 	#subBlockNodes.remove_at(loc+1)
 	
 	
@@ -132,6 +132,8 @@ func _on_head_area_area_entered(area: Area2D) -> void:
 
 func _on_head_area_area_exited(area: Area2D) -> void:
 	BigBlockArea = null
+	if(get_parent().name == "Tail"):
+		self.reparent(Globals.BlockFolder)
 
 func adopt(newBlock : Node2D):
 	print("ADOPT")

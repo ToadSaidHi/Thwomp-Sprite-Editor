@@ -40,6 +40,7 @@ offset_right = 220.0
 offset_bottom = 150.0
 
 [node name="Hole1" type="ColorRect" parent="." unique_id=1664895739]
+visible = false
 offset_top = 10.0
 offset_right = 80.0
 offset_bottom = 140.0

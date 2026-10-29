@@ -4,10 +4,8 @@
 [ext_resource type="Resource" uid="uid://cgcpvi2l542l5" path="res://Objects/Blocks/getFromSprite/getArcDatFromSprite.tres" id="2_t4uby"]
 [ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="4_u72yf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4uby"]
-size = Vector2(100.5, 130)
-
 [node name="subBlock" type="Node2D" unique_id=650439733]
+z_index = 1
 script = ExtResource("1_t4uby")
 block = ExtResource("2_t4uby")
 
@@ -45,7 +43,6 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InsertArea" unique_id=1132358745]
 position = Vector2(49.75, 75)
-shape = SubResource("RectangleShape2D_t4uby")
 
 [connection signal="button_down" from="Draggable" to="." method="_on_draggable_button_down"]
 [connection signal="button_up" from="Draggable" to="." method="_on_draggable_button_up"]

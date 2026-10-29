@@ -9,6 +9,9 @@ var allSprites : Array[CustomSprite]
 var currentBuildingSprite : CustomSprite
 
 
+#Lego Table Nodes
+var BlockFolder : Node2D
+
 func getKamekFolder() -> String:
 	if(currentProject == null):
 		return "user://mainTest/files/Kamek"

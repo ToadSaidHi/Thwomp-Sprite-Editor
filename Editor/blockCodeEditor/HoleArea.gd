@@ -7,11 +7,13 @@ func setSubBlock(blockIn : subBlock, node : Node2D):
 
 func getHoleType() -> BlockType:
 	var b : Block = get_parent().get_parent().block
-	if b.SubBlockInputs.size() > HoleNum - 1:
-		return b.SubBlockInputs.get(HoleNum - 1)
+	if b.SubBlockInputs.size() > HoleNum :
+		return b.SubBlockInputs.get(HoleNum )
 	return null
 
 func _process(delta: float) -> void:
-	if(is_visible_in_tree()):
+	if(!is_visible_in_tree()):
 		monitorable = false
+	if(is_visible_in_tree()):
+		monitorable = true
 	#$"CollisionShape2D".shape.size.x = 
