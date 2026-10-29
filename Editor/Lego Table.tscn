@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://brpcr35l32tg6" path="res://Assets/png/Thwomp 18x18.png" id="3_2suse"]
 [ext_resource type="Script" uid="uid://c4wtmywopxvls" path="res://Editor/wallpaper.gd" id="3_bf5ks"]
 [ext_resource type="Resource" uid="uid://b62p67u484k2j" path="res://Objects/Blocks/Vars/StringSub.tres" id="6_6aulk"]
+[ext_resource type="PackedScene" uid="uid://b1xhkmqtgn1nc" path="res://Editor/blockCodeEditor/StarterBlock.tscn" id="6_vmv48"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf5ks"]
 texture = ExtResource("2_4fyfc")
@@ -69,7 +70,9 @@ offset_right = 58533.336
 offset_bottom = 28028.664
 flat = true
 
-[node name="Block" parent="SubViewportContainer/SubViewport/Blocks" unique_id=650439733 instance=ExtResource("1_wq067")]
+[node name="StartBlock" parent="SubViewportContainer/SubViewport/Blocks" unique_id=650439733 instance=ExtResource("6_vmv48")]
+
+[node name="Block" parent="SubViewportContainer/SubViewport/Blocks" unique_id=1816226974 instance=ExtResource("1_wq067")]
 position = Vector2(10, 349)
 block = ExtResource("2_nek0n")
 

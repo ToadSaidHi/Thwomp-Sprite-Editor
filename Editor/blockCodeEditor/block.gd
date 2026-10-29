@@ -25,8 +25,6 @@ func setColor():
 	$Base.modulate = (block.Type.color)
 
 
-
-
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("clickDown") and mouseInBox):
 		dragging = true
@@ -107,9 +105,7 @@ func growBlock():
 		x+=1
 	$Draggable.size.x = e.size.x+120
 	
-	
 
-			
 
 var mouseInBox = false
 

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Block" format=3 uid="uid://b5vfvo7le3gml"]
+
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_7yhvr"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="2_byvyg"]
+
+[sub_resource type="Resource" id="Resource_hh4m4"]
+script = ExtResource("1_7yhvr")
+Name = "<hrbd67*(73hg"
+color = Color(0.23921569, 0.3882353, 0.41960785, 1)
+metadata/_custom_type_script = "uid://b30t1q3f3e4cu"
+
+[resource]
+script = ExtResource("2_byvyg")
+Title = "Start"
+Type = SubResource("Resource_hh4m4")
+metadata/_custom_type_script = "uid://bs1q4d40o5kko"

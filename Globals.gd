@@ -11,6 +11,8 @@ var currentBuildingSprite : CustomSprite
 
 #Lego Table Nodes
 var BlockFolder : Node2D
+var currentEditingFunction : CustomFunction
+
 
 func getKamekFolder() -> String:
 	if(currentProject == null):
