@@ -5,7 +5,7 @@ func Build() -> String:
 	for sp in Globals.allSprites:
 		Globals.currentBuildingSprite = sp
 		var cpp = headers + "\n\n";
-		cpp += "const char* ModelLoaderConst [] = { \"<ARCNAME>\", NULL };\n\n".replace("<ARCNAME>", sp.arcData.arcFile)
+		cpp += "const char* ModelLoaderConst<NAME> [] = { \"<ARCNAME>\", NULL };\n\n".replace("<ARCNAME>", sp.arcData.arcFile).replace("<NAME>", sp.Name)
 		cpp += "class " + sp.Name + " : public dEn_c {\npublic:\n\n"
 		cpp += "\tint onCreate();\n\tint onExecute();\n\tint onDelete();\n\tint onDraw();\n\n"
 		for v in sp.globalVars:
@@ -35,7 +35,7 @@ func Build() -> String:
 		
 		cpp += "const SpriteData <NAME>SpriteData = \n{ ProfileId::<NAME>, 0, 0, 0, 0, 0x100, 0x100, 0, 0, 0, 0, 0 };\n\n".replace("<NAME>", sp.Name)
 		
-		cpp += "Profile <NAME>Profile(&<NAME>::build, SpriteId::<NAME>, &<NAME>SpriteData, ProfileId::<NAME>, ProfileId::<NAME>, \"<NAME>\", ModelLoaderConst);\n\n".replace("<NAME>", sp.Name)
+		cpp += "Profile <NAME>Profile(&<NAME>::build, SpriteId::<NAME>, &<NAME>SpriteData, ProfileId::<NAME>, ProfileId::<NAME>, \"<NAME>\", ModelLoaderConst<NAME>);\n\n".replace("<NAME>", sp.Name)
 		
 		for f in sp.Functs:
 			cpp += buildFunction(sp, f)

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Block" format=3 uid="uid://c72yop3cvkhqs"]
+
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_50x5d"]
+[ext_resource type="Resource" uid="uid://b25nixh28b3vn" path="res://Objects/Block Types/AnimationAndModel.tres" id="2_13rxj"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="2_x70pr"]
+
+[resource]
+script = ExtResource("2_x70pr")
+Title = "Draw Model"
+Description = "Draws the model onto the screen"
+Type = ExtResource("2_13rxj")
+codeInsert = "bodyModel.scheduleForDrawing();"
+metadata/_custom_type_script = "uid://bs1q4d40o5kko"

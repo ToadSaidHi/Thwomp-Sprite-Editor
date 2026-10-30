@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Block" format=3 uid="uid://dad25i14wnmh"]
+
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_04x1x"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="2_n8qyi"]
+[ext_resource type="Resource" uid="uid://b25nixh28b3vn" path="res://Objects/Block Types/AnimationAndModel.tres" id="2_u3773"]
+
+[resource]
+script = ExtResource("2_n8qyi")
+Title = "Update Model Geometry"
+Description = "Updated model geometry, such as scale and position"
+Type = ExtResource("2_u3773")
+codeInsert = "updateModelMatrices();bodyModel._vf1C();"
+metadata/_custom_type_script = "uid://bs1q4d40o5kko"

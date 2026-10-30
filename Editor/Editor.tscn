@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://ddewx2bkyj58r" path="res://Editor/editor.gd" id="1_rh0xm"]
 [ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Classes/Sprite.gd" id="2_ue5br"]
 [ext_resource type="Resource" uid="uid://3pvit34qe3w5" path="res://Objects/Sprites/GoodChefSprite.tres" id="3_uuq6v"]
+[ext_resource type="Resource" uid="uid://rybkup1beo2x" path="res://Objects/Sprites/Templates/Blank - Model.tres" id="4_lsqqn"]
 [ext_resource type="PackedScene" uid="uid://bse0p2swux856" path="res://Editor/SpriteTile.tscn" id="4_uuq6v"]
+[ext_resource type="Texture2D" uid="uid://6w22guu4yi1v" path="res://Assets/png/Plus Sign.png" id="5_q4kyq"]
 
 [node name="Editor" type="Node2D" unique_id=1944090959]
 script = ExtResource("1_rh0xm")
-testSpriteArray = Array[ExtResource("2_ue5br")]([ExtResource("3_uuq6v")])
+testSpriteArray = Array[ExtResource("2_ue5br")]([ExtResource("3_uuq6v"), ExtResource("4_lsqqn")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1063770791]
 offset_left = -586.0
@@ -22,6 +24,16 @@ position = Vector2(-300, -266)
 
 [node name="SpriteTile" parent="SpriteTiles" unique_id=1911849603 instance=ExtResource("4_uuq6v")]
 visible = false
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1901895127]
+texture_filter = 1
+offset_left = -502.0
+offset_top = -243.0
+offset_right = -462.0
+offset_bottom = -203.0
+scale = Vector2(2, 2)
+texture_normal = ExtResource("5_q4kyq")
+stretch_mode = 0
 
 [node name="Toolbar" type="ColorRect" parent="." unique_id=2096452552]
 offset_left = -577.0

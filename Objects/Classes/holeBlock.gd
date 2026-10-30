@@ -4,9 +4,9 @@ class_name HoleBlock extends Block
 
 func convertToCode() -> String:
 	var l = codeInsert
-	l.replace("%0%", SubBlocks.get(0))
-	l.replace("%1%", SubBlocks.get(1))
-	l.replace("%2%", SubBlocks.get(2))
-	l.replace("%3%", SubBlocks.get(3))
-	l.replace("%4%", SubBlocks.get(4))
+	l.replace("%0%", SubBlocks.get(0).convertToCode())
+	l.replace("%1%", SubBlocks.get(1).convertToCode())
+	l.replace("%2%", SubBlocks.get(2).convertToCode())
+	l.replace("%3%", SubBlocks.get(3).convertToCode())
+	l.replace("%4%", SubBlocks.get(4).convertToCode())
 	return ""

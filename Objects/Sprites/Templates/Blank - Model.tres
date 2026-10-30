@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="CustomSprite" format=3 uid="uid://rybkup1beo2x"]
+
+[ext_resource type="Script" uid="uid://dr8osbp47ncfq" path="res://Objects/Classes/Funct.gd" id="1_0hf1r"]
+[ext_resource type="Script" uid="uid://cfddph5fg4o1l" path="res://Objects/Classes/State.gd" id="2_aijlh"]
+[ext_resource type="Script" uid="uid://0lt8g8m4rrxc" path="res://Objects/Classes/variable.gd" id="3_0xjwh"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="3_aijlh"]
+[ext_resource type="Script" uid="uid://r5du4vthdi1o" path="res://Objects/Classes/Sprite.gd" id="4_lwqfy"]
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="4_vnq7j"]
+[ext_resource type="Resource" uid="uid://b25nixh28b3vn" path="res://Objects/Block Types/AnimationAndModel.tres" id="5_63ijy"]
+[ext_resource type="Script" uid="uid://bruaurg26ga0b" path="res://Objects/Classes/spriteArcData.gd" id="7_vnq7j"]
+[ext_resource type="Resource" uid="uid://sobfqdki4x1h" path="res://Objects/Blocks/Basic/loadModel.tres" id="8_63ijy"]
+[ext_resource type="Resource" uid="uid://b7voelx6wv3xw" path="res://Objects/Blocks/Basic/returnTrue.tres" id="9_abma8"]
+[ext_resource type="Resource" uid="uid://c72yop3cvkhqs" path="res://Objects/Blocks/Basic/scheduleModelForDraw.tres" id="10_abma8"]
+[ext_resource type="Resource" uid="uid://dcpew6k7x3nco" path="res://Objects/Blocks/States/doStateExecution.tres" id="11_753rw"]
+[ext_resource type="Resource" uid="uid://dad25i14wnmh" path="res://Objects/Blocks/Model/Update Model Geometry.tres" id="12_4bq4a"]
+
+[sub_resource type="Resource" id="Resource_aijlh"]
+script = ExtResource("3_aijlh")
+Title = "updateModelMatrices"
+Type = ExtResource("5_63ijy")
+codeInsert = "matrix.translation(pos.x, pos.y, pos.z);matrix.applyRotationYXZ(&rot.x, &rot.y, &rot.z);bodyModel.setDrawMatrix(matrix);bodyModel.setScale(&scale);bodyModel.calcWorld(false);"
+metadata/_custom_type_script = "uid://bs1q4d40o5kko"
+
+[sub_resource type="Resource" id="Resource_vnq7j"]
+script = ExtResource("1_0hf1r")
+Name = "updateModelMatrices"
+lines = Array[ExtResource("3_aijlh")]([SubResource("Resource_aijlh")])
+returnType = "void"
+isDesignated = -1
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_lwqfy"]
+script = ExtResource("7_vnq7j")
+arcFile = "Sprite"
+brres = "model.brres"
+mdl = "mesh"
+metadata/_custom_type_script = "uid://bruaurg26ga0b"
+
+[sub_resource type="Resource" id="Resource_63ijy"]
+script = ExtResource("1_0hf1r")
+Name = "onCreate"
+lines = Array[ExtResource("3_aijlh")]([ExtResource("8_63ijy"), ExtResource("9_abma8")])
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_04tk7"]
+script = ExtResource("1_0hf1r")
+Name = "onDelete"
+lines = Array[ExtResource("3_aijlh")]([ExtResource("9_abma8")])
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_ekmkt"]
+script = ExtResource("1_0hf1r")
+Name = "onDraw"
+lines = Array[ExtResource("3_aijlh")]([ExtResource("10_abma8"), ExtResource("9_abma8")])
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[sub_resource type="Resource" id="Resource_xm348"]
+script = ExtResource("1_0hf1r")
+Name = "onExecute"
+lines = Array[ExtResource("3_aijlh")]([ExtResource("11_753rw"), ExtResource("12_4bq4a"), ExtResource("9_abma8")])
+returnType = "int"
+metadata/_custom_type_script = "uid://dr8osbp47ncfq"
+
+[resource]
+script = ExtResource("4_lwqfy")
+Name = "emptyWithModel"
+Functs = Array[ExtResource("1_0hf1r")]([SubResource("Resource_vnq7j")])
+arcData = SubResource("Resource_lwqfy")
+onCreate = SubResource("Resource_63ijy")
+onDraw = SubResource("Resource_ekmkt")
+onExecute = SubResource("Resource_xm348")
+onDelete = SubResource("Resource_04tk7")
+metadata/_custom_type_script = "uid://r5du4vthdi1o"

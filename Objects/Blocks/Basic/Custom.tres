@@ -1,11 +1,16 @@
-[gd_resource type="Resource" script_class="Block" format=3 uid="uid://bdee4bc25288w"]
+[gd_resource type="Resource" script_class="HoleBlock" format=3 uid="uid://bdee4bc25288w"]
 
-[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="1_2gnyi"]
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_0tn6m"]
 [ext_resource type="Resource" uid="uid://dp77mtw8byt4w" path="res://Objects/Block Types/Other.tres" id="1_khm81"]
+[ext_resource type="Resource" uid="uid://x8h57mullpp6" path="res://Objects/Block Types/Text.tres" id="2_4iy22"]
+[ext_resource type="Script" uid="uid://whbkuqa2t0pt" path="res://Objects/Classes/subBlock.gd" id="3_spjpv"]
+[ext_resource type="Script" uid="uid://klncg8yl1kr0" path="res://Objects/Classes/holeBlock.gd" id="5_4qns0"]
 
 [resource]
-script = ExtResource("1_2gnyi")
-Title = "[TextBox]"
+script = ExtResource("5_4qns0")
+Title = "Custom Insert"
 Description = "Run a custom line of code"
 Type = ExtResource("1_khm81")
+codeInsert = "%0%"
+SubBlockInputs = Array[ExtResource("1_0tn6m")]([ExtResource("2_4iy22")])
 metadata/_custom_type_script = "uid://bs1q4d40o5kko"

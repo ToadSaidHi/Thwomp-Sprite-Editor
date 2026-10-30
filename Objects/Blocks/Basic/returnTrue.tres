@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Block" format=3 uid="uid://b7voelx6wv3xw"]
+
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_xm348"]
+[ext_resource type="Resource" uid="uid://dp77mtw8byt4w" path="res://Objects/Block Types/Other.tres" id="2_w1lw2"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="3_jgw2m"]
+
+[resource]
+script = ExtResource("3_jgw2m")
+Title = "return True"
+Description = "To be placed at the end of the to() methods"
+Type = ExtResource("2_w1lw2")
+codeInsert = "return true;"
+metadata/_custom_type_script = "uid://bs1q4d40o5kko"

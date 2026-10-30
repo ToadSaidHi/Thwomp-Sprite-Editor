@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Block" format=3 uid="uid://dcpew6k7x3nco"]
+
+[ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_t3yjv"]
+[ext_resource type="Resource" uid="uid://djsc5oskdheg6" path="res://Objects/Block Types/State.tres" id="2_asqjj"]
+[ext_resource type="Script" uid="uid://bs1q4d40o5kko" path="res://Objects/Classes/block.gd" id="2_sw0go"]
+
+[resource]
+script = ExtResource("2_sw0go")
+Title = "Execute States"
+Description = "Execute State functions"
+Type = ExtResource("2_asqjj")
+codeInsert = "acState.execute();"
+metadata/_custom_type_script = "uid://bs1q4d40o5kko"

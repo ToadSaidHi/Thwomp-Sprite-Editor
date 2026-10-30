@@ -4,9 +4,12 @@
 [ext_resource type="Script" uid="uid://b30t1q3f3e4cu" path="res://Objects/Classes/blockType.gd" id="1_d5pcf"]
 [ext_resource type="Script" uid="uid://e7i0e2petq55" path="res://Objects/Classes/loadModel.gd" id="1_fsich"]
 [ext_resource type="Resource" uid="uid://b82d7negs1o5l" path="res://Objects/Block Types/ArcData.tres" id="2_0clwg"]
+[ext_resource type="Script" uid="uid://whbkuqa2t0pt" path="res://Objects/Classes/subBlock.gd" id="3_n01px"]
+[ext_resource type="Resource" uid="uid://cgcpvi2l542l5" path="res://Objects/Blocks/getFromSprite/getArcDatFromSprite.tres" id="4_o3lmn"]
 
 [resource]
 script = ExtResource("1_fsich")
+SubBlocks = Array[ExtResource("3_n01px")]([ExtResource("4_o3lmn")])
 Title = "Load Model"
 Description = "Loads Model from Sprite arc data"
 Type = ExtResource("1_0mj6a")

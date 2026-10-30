@@ -8,6 +8,9 @@ var allSprites : Array[CustomSprite]
 #Only to be used during Build()
 var currentBuildingSprite : CustomSprite
 
+#MainEditor
+var setSelectedSprite : CustomSprite
+
 
 #Lego Table Nodes
 var BlockFolder : Node2D

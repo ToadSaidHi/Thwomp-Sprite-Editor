@@ -7,12 +7,18 @@ func _ready() -> void:
 	loadSpriteTiles()
 	Build.Build()
 
+var currentWindow = 0
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("scroll up") and $SpriteTiles.position.y < -266:
+	if Input.is_action_just_pressed("scroll up") and $SpriteTiles.position.y < -266 and currentWindow == 0:
 		$SpriteTiles.position.y += 15
-	elif Input.is_action_just_pressed("Scroll Down") :
+	elif Input.is_action_just_pressed("Scroll Down") and currentWindow == 0:
 		$SpriteTiles.position.y -= 15
+	
+	if(Globals.setSelectedSprite != null):
+		var sp : CustomSprite = Globals.setSelectedSprite
+		Globals.setSelectedSprite = null
+		currentWindow = 1
 	
 func loadSpriteTiles():
 	var st = $SpriteTiles
