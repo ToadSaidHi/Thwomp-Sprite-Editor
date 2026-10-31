@@ -1,20 +1,28 @@
 [gd_scene format=3 uid="uid://dpxtfxs7jfvre"]
 
+[ext_resource type="Script" uid="uid://b3ht7ixrd2m85" path="res://main_menu.gd" id="1_i26rj"]
+[ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="2_eiy7p"]
+
 [node name="MainMenu" type="Node2D" unique_id=708923123]
+script = ExtResource("1_i26rj")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1706227575]
 zoom = Vector2(1.65, 1.65)
 
 [node name="New Project" type="Button" parent="." unique_id=1411149363]
-offset_left = -124.0
-offset_top = 75.0
-offset_right = 124.0
-offset_bottom = 140.0
+offset_left = -262.0
+offset_top = 46.0
+offset_right = 258.0
+offset_bottom = 133.0
+theme = ExtResource("2_eiy7p")
 text = "New Project"
 
 [node name="Load Project" type="Button" parent="." unique_id=901689145]
-offset_left = -124.0
-offset_top = 163.0
-offset_right = 124.0
-offset_bottom = 228.0
+offset_left = -277.0
+offset_top = 162.0
+offset_right = 272.0
+offset_bottom = 249.0
+theme = ExtResource("2_eiy7p")
 text = "Load Project"
+
+[connection signal="button_up" from="New Project" to="." method="_on_new_project_button_up"]
