@@ -5,6 +5,12 @@ var mouseOff
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.BlockFolder = $SubViewportContainer/SubViewport/Blocks
+	
+	var sp : CustomSprite = load("res://Objects/Sprites/Templates/Blank - Model.tres")
+	Globals.currentEditingFunction = sp.onExecute
+	$SubViewportContainer/SubViewport/Blocks/StartBlock._ready()
+	openFunction(Globals.currentEditingFunction)
+	
 
 func _process(delta: float) -> void:
 	if(dragging):
@@ -26,3 +32,18 @@ func summonBlock(bl : Block):
 		blockNode = preload("res://Editor/blockCodeEditor/Block.tscn").instantiate()
 	blockNode.block = bl
 	Globals.BlockFolder.add_child(blockNode)
+
+func openFunction(cf : CustomFunction):
+	var head = $SubViewportContainer/SubViewport/Blocks/StartBlock
+	var packedBlock : PackedScene = load("res://Editor/blockCodeEditor/Block.tscn")
+	var packedSubBlock : PackedScene = load("res://Editor/blockCodeEditor/subBlock.tscn")
+	for i in cf.lines:
+		var tail : Node2D = packedBlock.instantiate()
+		tail.position = Vector2(0,0)
+		tail.block = i.duplicate()
+		tail.createSubBlockNodes()
+		Globals.BlockFolder.add_child(tail)
+		head.adopt(tail)
+	#	tail._ready()
+		head = tail
+		

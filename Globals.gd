@@ -10,6 +10,7 @@ var currentBuildingSprite : CustomSprite
 
 #MainEditor
 var setSelectedSprite : CustomSprite
+var currentSprite : CustomSprite
 
 
 #Lego Table Nodes
