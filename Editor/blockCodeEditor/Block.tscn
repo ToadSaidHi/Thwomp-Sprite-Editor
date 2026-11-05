@@ -14,6 +14,7 @@ size = Vector2(129, 56)
 [node name="Block" type="Node2D" unique_id=650439733]
 script = ExtResource("1_sal11")
 block = ExtResource("2_wmdd0")
+subBlocks = null
 
 [node name="Base" type="ColorRect" parent="." unique_id=166731568]
 offset_right = 120.0

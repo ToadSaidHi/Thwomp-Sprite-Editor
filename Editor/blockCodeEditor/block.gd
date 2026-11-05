@@ -11,12 +11,14 @@ var mouseOff: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	
+	var brandNewBlock = block.SubBlockInputs.size() > 0 and block.SubBlocks.size() == 0
 	
 	$Title.text = block.Title
 	for i in block.SubBlockInputs:
 		subBlocks.append(null)
-		block.SubBlocks.append(null)
-		subBlockNodes.append(null)
+		if brandNewBlock:
+			block.SubBlocks.append(null)
+			subBlockNodes.append(null)
 	
 	setColor()
 	
@@ -26,7 +28,7 @@ func setColor():
 
 
 func createSubBlockNodes():
-	pass
+	
 
 
 
