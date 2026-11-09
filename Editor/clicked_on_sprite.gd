@@ -1,4 +1,8 @@
 extends ColorRect
 
 func _process(delta: float) -> void:
-	$Title.text = Globals.currentSprite.Name
+	if (Globals.currentSprite != null):
+		$Title.text = Globals.currentSprite.Name
+		show()
+		
+	

@@ -18,6 +18,7 @@ func _process(delta: float) -> void:
 	if(Globals.setSelectedSprite != null):
 		var sp : CustomSprite = Globals.setSelectedSprite
 		Globals.setSelectedSprite = null
+		Globals.currentSprite = sp
 		currentWindow = 1
 	
 func loadSpriteTiles():

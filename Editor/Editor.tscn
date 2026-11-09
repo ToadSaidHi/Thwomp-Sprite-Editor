@@ -65,6 +65,7 @@ texture_normal = ExtResource("5_q4kyq")
 stretch_mode = 0
 
 [node name="Clicked On Sprite" type="ColorRect" parent="." unique_id=402680539]
+visible = false
 offset_left = -601.0
 offset_top = -341.0
 offset_right = 588.0
