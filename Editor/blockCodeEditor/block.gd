@@ -9,16 +9,19 @@ extends Node2D
 var dragging: bool = false
 var mouseOff: Vector2 = Vector2.ZERO
 
+var CalcSubBlock = false
+
 func _ready() -> void:
 	
 	var brandNewBlock = block.SubBlockInputs.size() > 0 and block.SubBlocks.size() == 0
 	
 	$Title.text = block.Title
-	for i in block.SubBlockInputs:
-		subBlocks.append(null)
-		if brandNewBlock:
-			block.SubBlocks.append(null)
-			subBlockNodes.append(null)
+	if (!CalcSubBlock):
+		for i in block.SubBlockInputs:
+			subBlocks.append(null)
+			if brandNewBlock:
+				block.SubBlocks.append(null)
+				subBlockNodes.append(null)
 	
 	setColor()
 	
@@ -28,7 +31,25 @@ func setColor():
 
 
 func createSubBlockNodes():
-	pass
+	CalcSubBlock = true
+	subBlockNodes = []
+	subBlocks = []
+	if block.SubBlockInputs.size() > 0:
+		var packedSubBlock : PackedScene = load("res://Editor/blockCodeEditor/subBlock.tscn")
+		var x = 0
+		for i in block.SubBlocks:
+			if i == null:
+				subBlockNodes.append(null)
+				subBlocks.append(null)
+			else:
+				subBlockNodes.append(null)
+				subBlocks.append(null)
+				var bloc : Node2D = packedSubBlock.instantiate()
+				bloc.block = i.duplicate()
+				Globals.BlockFolder.add_child(bloc)
+				insertSubBlock(x, i, bloc)
+				
+			x+=1
 
 
 
@@ -75,6 +96,7 @@ func growBlock():
 	var e = $Base/Extension
 	e.size.x = $Title.size.x
 	var x = 0
+	print(subBlocks.size())
 	for i in subBlocks:
 		if(x == 0):
 			$Hole1.position.x = e.size.x + e.position.x

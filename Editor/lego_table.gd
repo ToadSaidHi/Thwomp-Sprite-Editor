@@ -7,7 +7,7 @@ func _ready() -> void:
 	Globals.BlockFolder = $SubViewportContainer/SubViewport/Blocks
 	
 	var sp : CustomSprite = load("res://Objects/Sprites/Templates/Blank - Model.tres")
-	Globals.currentEditingFunction = sp.onExecute
+	Globals.currentEditingFunction = sp.onCreate
 	$SubViewportContainer/SubViewport/Blocks/StartBlock._ready()
 	openFunction(Globals.currentEditingFunction)
 	
@@ -41,8 +41,8 @@ func openFunction(cf : CustomFunction):
 		var tail : Node2D = packedBlock.instantiate()
 		tail.position = Vector2(0,0)
 		tail.block = i.duplicate()
-		tail.createSubBlockNodes()
 		Globals.BlockFolder.add_child(tail)
+		tail.createSubBlockNodes()
 		head.adopt(tail)
 	#	tail._ready()
 		head = tail
