@@ -11,6 +11,9 @@
 [ext_resource type="Script" uid="uid://c4wtmywopxvls" path="res://Editor/wallpaper.gd" id="7_8oxxl"]
 [ext_resource type="Script" uid="uid://bm5bl0isi6w20" path="res://Editor/clicked_on_sprite.gd" id="10_8oxxl"]
 [ext_resource type="Theme" uid="uid://cplk57enbq5ui" path="res://Objects/Themes/MainTheme.tres" id="10_fk0vg"]
+[ext_resource type="Texture2D" uid="uid://2r355pnqoyha" path="res://Assets/png/gear.png" id="12_veos7"]
+[ext_resource type="Texture2D" uid="uid://cbpqq5at5kmyt" path="res://Assets/png/Collision.png" id="13_j21il"]
+[ext_resource type="Texture2D" uid="uid://4jian6hwtrcf" path="res://Assets/png/newFunc.png" id="14_3oj1v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veos7"]
 texture = ExtResource("5_ef05v")
@@ -65,7 +68,6 @@ texture_normal = ExtResource("5_q4kyq")
 stretch_mode = 0
 
 [node name="Clicked On Sprite" type="ColorRect" parent="." unique_id=402680539]
-visible = false
 offset_left = -601.0
 offset_top = -341.0
 offset_right = 588.0
@@ -84,6 +86,36 @@ theme = ExtResource("10_fk0vg")
 text = "Name Of Sprite"
 fit_content = true
 horizontal_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="Clicked On Sprite" unique_id=1201634934]
+texture_filter = 1
+layout_mode = 0
+offset_left = 59.0
+offset_top = 144.00002
+offset_right = 69.0
+offset_bottom = 154.00002
+scale = Vector2(10, 10)
+texture_normal = ExtResource("12_veos7")
+
+[node name="Collision" type="TextureButton" parent="Clicked On Sprite" unique_id=1048484977]
+texture_filter = 1
+layout_mode = 0
+offset_left = 59.0
+offset_top = 444.0
+offset_right = 69.0
+offset_bottom = 454.0
+scale = Vector2(10, 10)
+texture_normal = ExtResource("13_j21il")
+
+[node name="newFunc" type="TextureButton" parent="Clicked On Sprite" unique_id=829795281]
+texture_filter = 1
+layout_mode = 0
+offset_left = 59.0
+offset_top = 294.0
+offset_right = 69.0
+offset_bottom = 304.0
+scale = Vector2(10, 10)
+texture_normal = ExtResource("14_3oj1v")
 
 [node name="Toolbar" type="ColorRect" parent="." unique_id=2096452552]
 offset_left = -582.0
